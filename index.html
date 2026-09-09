@@ -115,17 +115,65 @@
     </div>
   </section>
 
-  <!-- ============ ESTACIÓN: FÓSIL (placeholder) ============ -->
+  <!-- ============ ESTACIÓN: FÓSIL (completa, interactiva) ============ -->
   <section class="station station--panel" id="fosil">
     <div class="station-inner">
       <span class="station-kicker">Estación</span>
       <h2 class="station-title">FÓSIL</h2>
       <p class="station-text">
-        Existen distintos tipos de fósiles: los que preservan huesos,
-        dientes y conchas, y los que solo conservan impresiones de los
-        seres vivos en el sustrato.
+        Existen distintos tipos de fósiles: los que preservan huesos, dientes
+        y conchas; los que solo conservaron impresiones de los seres vivos
+        en el sustrato; y los que se formaron por minerales y sedimentos que
+        rellenaron las cavidades del cuerpo de algunos organismos.
       </p>
-      <!-- Aquí irá el paso a paso ilustrado de cómo se forma un fósil -->
+      <p class="station-text">
+        En Vallecillo, el ambiente marino profundo, sin movimiento y con un
+        suelo sin oxígeno (anóxico) permitió una excelente preservación de
+        los restos de organismos. Por eso, hoy estos fósiles son
+        considerados "joyas de la paleontología".
+      </p>
+
+      <div class="question-bubble">¿Sabes qué es un fósil?</div>
+
+      <!-- ---- Paso a paso interactivo: ¿cómo se forma un fósil? ---- -->
+      <div class="fossil-stepper" data-stepper>
+        <div class="fossil-stepper-tabs">
+          <button class="fossil-tab is-active" data-fossil-track="amonite">Un amonite</button>
+          <button class="fossil-tab" data-fossil-track="pez">Un pez</button>
+        </div>
+
+        <!-- Secuencia: amonite -->
+        <ol class="fossil-steps" data-fossil-steps="amonite">
+          <li class="fossil-step is-active">Los amonites nadaron en los mares cretácicos de Vallecillo.</li>
+          <li class="fossil-step">Al morir, cayeron al fondo marino y sus tejidos blandos se degradaron.</li>
+          <li class="fossil-step">Las partes duras, como la concha, se enterraron bajo los sedimentos.</li>
+          <li class="fossil-step">Los sedimentos rellenaron las cavidades de las conchas.</li>
+          <li class="fossil-step">Las conchas originales se perdieron y el sedimento tomó su forma.</li>
+          <li class="fossil-step">En las rocas se formaron moldes tridimensionales con la forma de los amonites.</li>
+        </ol>
+
+        <!-- Secuencia: pez -->
+        <ol class="fossil-steps" data-fossil-steps="pez" hidden>
+          <li class="fossil-step is-active">Los peces nadaron en los mares cretácicos de Vallecillo.</li>
+          <li class="fossil-step">Al morir, cayeron al fondo marino y sus tejidos blandos se degradaron.</li>
+          <li class="fossil-step">Las partes duras, como huesos y dientes, se enterraron bajo los sedimentos.</li>
+          <li class="fossil-step">Bajo los sedimentos, los esqueletos se comprimieron.</li>
+          <li class="fossil-step">Con el paso del tiempo, los restos de algunos peces se fosilizaron.</li>
+        </ol>
+
+        <div class="fossil-stepper-controls">
+          <button class="fossil-btn" data-fossil-prev>← Anterior</button>
+          <span class="fossil-step-count" data-fossil-count>1 / 6</span>
+          <button class="fossil-btn" data-fossil-next>Siguiente →</button>
+        </div>
+      </div>
+
+      <p class="station-text" style="margin-top: 28px;">
+        Las rocas y los fósiles son evidencia de los procesos geológicos y
+        biológicos que han ocurrido en la Tierra durante millones de años;
+        su estudio permite reconocer los eventos que dieron origen a los
+        paisajes, ambientes y seres vivos que conocemos hoy.
+      </p>
     </div>
   </section>
 

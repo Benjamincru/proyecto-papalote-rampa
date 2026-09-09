@@ -4,12 +4,31 @@ Este archivo lleva el registro de avance del proyecto de residencia
 (digitalización de la rampa de evolución del planeta, Papalote Museo
 del Niño Monterrey). Cada vez que trabajemos, agregamos una entrada
 nueva arriba con: fecha, quién trabajó, qué se hizo, y qué sigue.
-Así, si memo y yo(benjamin) no coinciden en horario, cualquiera
+Así, si Benjamín y su compañero no coinciden en horario, cualquiera
 puede retomar exactamente donde se quedó el otro.
 
 ---
 
-## 2026-09-08 — Benjamín 
+## 2026-09-08 (2da sesión) — Benjamín (con ayuda de Claude)
+
+**Se hizo:**
+- Se completó la estación **FÓSIL** con el texto real de las fotos
+  (tipos de fósiles, por qué Vallecillo preserva tan bien los fósiles).
+- Se agregó un paso a paso **interactivo** de cómo se forma un fósil,
+  con dos secuencias que el visitante puede alternar: la de un amonite
+  (6 pasos) y la de un pez (5 pasos), con botones "Anterior/Siguiente".
+- Se actualizaron `index.html`, `css/style.css` y `js/script.js`.
+
+**Pendiente / siguiente sesión:**
+- (se mantiene lo pendiente de la sesión anterior: colaborador, fotos
+  reales, resto de estaciones, hosting, gamificación)
+- Sugerencia para la próxima estación: **Tierra** (línea de tiempo de
+  continentes) o **Aramberri con más multimedia** (agregar foto real
+  del fósil cuando la tengan).
+
+---
+
+## 2026-09-08 — Benjamín (con ayuda de Claude)
 
 **Se hizo:**
 - Se creó el repositorio `rampa-papalote-uanl` en GitHub.
