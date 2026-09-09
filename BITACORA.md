@@ -9,7 +9,7 @@ puede retomar exactamente donde se quedó el otro.
 
 ---
 
-## 2026-09-08 (2da sesión) — Benjamín (con ayuda de Claude)
+## 2026-09-08 (2da sesión) — Benjamín 
 
 **Se hizo:**
 - Se completó la estación **FÓSIL** con el texto real de las fotos
@@ -28,7 +28,7 @@ puede retomar exactamente donde se quedó el otro.
 
 ---
 
-## 2026-09-08 — Benjamín (con ayuda de Claude)
+## 2026-09-08 — Benjamín 
 
 **Se hizo:**
 - Se creó el repositorio `rampa-papalote-uanl` en GitHub.
