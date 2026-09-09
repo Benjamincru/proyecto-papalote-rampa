@@ -1,0 +1,307 @@
+/* ==========================================================================
+   GUÍA DE ESTILO — La Rampa del Planeta (Papalote Museo del Niño Monterrey)
+   ==========================================================================
+   Colores base:
+   --verde-papalote:  #4E9F5C   (usado en la barra "TIERRA" y acentos vivos)
+   --naranja-globo:   #F0954C   (globos de pregunta "¿Sabías que...?")
+   --azul-fosil:      #2B6E7C   (barra "FÓSIL GUÍA", acentos fríos)
+   --madera:          #C89B6A   (paneles de madera de la rampa física)
+   --madera-clara:    #E8D4B0
+   --crema:           #FAF7F0   (fondo general, limpio)
+   --gris-panel:      #E9EDEC   (paneles tipo "CAMBIO", "ECOSISTEMA")
+   --tinta:           #1E3A3D   (texto principal, oscuro azulado)
+
+   Tipografía:
+   - Baloo 2 (redondeada, bold) -> títulos y elementos museográficos
+   - Nunito (sans, legible) -> texto de lectura
+   ========================================================================== */
+
+:root {
+  --verde-papalote: #4E9F5C;
+  --naranja-globo: #F0954C;
+  --azul-fosil: #2B6E7C;
+  --madera: #C89B6A;
+  --madera-clara: #E8D4B0;
+  --crema: #FAF7F0;
+  --gris-panel: #E9EDEC;
+  --tinta: #1E3A3D;
+  --blanco: #FFFFFF;
+
+  --font-titulo: 'Baloo 2', sans-serif;
+  --font-texto: 'Nunito', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-texto);
+  color: var(--tinta);
+  background: var(--crema);
+  line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: var(--font-titulo); margin: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ============ ENCABEZADO ============ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--blanco);
+  border-bottom: 3px solid var(--verde-papalote);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-group { display: flex; align-items: center; gap: 10px; }
+
+.logo-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--verde-papalote);
+  display: inline-block;
+}
+
+.logo-text {
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--tinta);
+}
+
+.main-nav { display: flex; gap: 22px; }
+
+.main-nav a {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--tinta);
+  padding: 6px 2px;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.main-nav a:hover { border-color: var(--naranja-globo); }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--tinta);
+}
+
+/* ============ HERO ============ */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 90px 24px 110px;
+  text-align: center;
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--crema) 100%);
+}
+
+.hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.18;
+  z-index: 0;
+}
+
+.hero-shape--1 {
+  width: 340px; height: 340px;
+  background: var(--verde-papalote);
+  top: -120px; left: -100px;
+}
+
+.hero-shape--2 {
+  width: 260px; height: 260px;
+  background: var(--naranja-globo);
+  bottom: -100px; right: -80px;
+}
+
+.hero-content { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+
+.hero-eyebrow {
+  font-weight: 700;
+  color: var(--verde-papalote);
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.15;
+  color: var(--tinta);
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  max-width: 480px;
+  margin: 0 auto 30px;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: var(--naranja-globo);
+  color: var(--blanco);
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 40px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 8px 20px rgba(240, 149, 76, 0.35);
+}
+
+.hero-cta:hover { transform: translateY(-2px); }
+
+/* ============ ESTACIONES (secciones de la rampa) ============ */
+.station { padding: 80px 24px; }
+
+.station-inner { max-width: 780px; margin: 0 auto; }
+
+.station--panel {
+  background: var(--madera);
+  color: var(--tinta);
+}
+
+.station--dark {
+  background: var(--tinta);
+  color: var(--crema);
+}
+
+.station--dark .station-title,
+.station--dark .fact-badge-num { color: var(--blanco); }
+
+.station--light {
+  background: var(--gris-panel);
+}
+
+.station-kicker {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--naranja-globo);
+  margin-bottom: 8px;
+}
+
+.station-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 20px;
+}
+
+.station-text { font-size: 1.05rem; margin-bottom: 16px; }
+
+.station-text--big {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ============ GLOBOS DE PREGUNTA (interacción) ============ */
+.question-bubble {
+  display: inline-block;
+  background: var(--naranja-globo);
+  color: var(--blanco);
+  font-weight: 700;
+  padding: 14px 22px;
+  border-radius: 24px 24px 24px 4px;
+  margin-top: 12px;
+  max-width: 90%;
+}
+
+.question-bubble--light {
+  background: var(--blanco);
+  color: var(--tinta);
+}
+
+/* ============ ESTACIÓN ARAMBERRI (prototipo) ============ */
+.aramberri-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.media-placeholder {
+  background: rgba(255,255,255,0.08);
+  border: 2px dashed rgba(255,255,255,0.35);
+  border-radius: 16px;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  color: var(--crema);
+  padding: 20px;
+}
+
+.fact-badges {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.fact-badge {
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 14px 18px;
+  min-width: 130px;
+  text-align: center;
+}
+
+.fact-badge-num {
+  display: block;
+  font-family: var(--font-titulo);
+  font-size: 1.6rem;
+  color: var(--verde-papalote);
+}
+
+.fact-badge-label {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  opacity: 0.85;
+}
+
+/* ============ PIE DE PÁGINA ============ */
+.site-footer {
+  text-align: center;
+  padding: 30px 24px;
+  font-size: 0.85rem;
+  color: var(--tinta);
+  background: var(--crema);
+}
+
+/* ============ RESPONSIVO ============ */
+@media (max-width: 720px) {
+  .main-nav { display: none; }
+  .nav-toggle { display: block; }
+  .aramberri-grid { grid-template-columns: 1fr; }
+}
+
+/* ============ ACCESIBILIDAD ============ */
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--naranja-globo);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-cta { transition: none; }
+}
