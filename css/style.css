@@ -352,6 +352,94 @@ a { color: inherit; text-decoration: none; }
   color: var(--azul-fosil);
 }
 
+/* ============ ESTACIÓN TIERRA: línea de tiempo interactiva ============ */
+.timeline {
+  background: var(--blanco);
+  border-radius: 20px;
+  padding: 28px;
+  margin-top: 24px;
+}
+
+.timeline-display {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 130px;
+  margin-bottom: 24px;
+}
+
+.timeline-globe {
+  flex-shrink: 0;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: var(--gris-panel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  transition: background 0.3s ease;
+}
+
+.timeline-era {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--verde-papalote);
+  margin-bottom: 4px;
+}
+
+.timeline-age {
+  font-size: 1.6rem;
+  color: var(--tinta);
+  margin-bottom: 6px;
+}
+
+.timeline-desc {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--tinta);
+}
+
+.timeline-slider {
+  width: 100%;
+  appearance: none;
+  height: 8px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--madera) 0%, var(--verde-papalote) 100%);
+  cursor: pointer;
+}
+
+.timeline-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--naranja-globo);
+  border: 3px solid var(--blanco);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+.timeline-slider::-moz-range-thumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--naranja-globo);
+  border: 3px solid var(--blanco);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+.timeline-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--azul-fosil);
+}
+
 /* ============ PIE DE PÁGINA ============ */
 .site-footer {
   text-align: center;

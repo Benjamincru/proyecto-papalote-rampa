@@ -44,20 +44,74 @@
     </div>
   </section>
 
-  <!-- ============ ESTACIÓN: TIERRA (placeholder, se llena después) ============ -->
+  <!-- ============ ESTACIÓN: TIERRA (línea de tiempo interactiva) ============ -->
   <section class="station station--panel" id="tierra">
     <div class="station-inner">
       <span class="station-kicker">Estación 1</span>
       <h2 class="station-title">TIERRA</h2>
       <p class="station-text">
-        La Tierra ha cambiado y evolucionado continuamente a través del tiempo,
-        desde una bola de magma hace 4,600 millones de años hasta los
-        continentes que conocemos hoy.
+        La Tierra ha cambiado y evolucionado continuamente a través del tiempo.
+        Desde sus orígenes hace 4,600 millones de años, el planeta ha estado en
+        constante transformación. A lo largo de su historia, los paisajes se han
+        modificado de tal manera que las montañas que hoy conocemos pudieron
+        estar bajo un mar profundo en otro tiempo.
       </p>
-      <div class="question-bubble">
-        ¿Sabías que hubo una época en la que podías caminar de África a la Antártida?
+
+      <div class="question-bubble">¿Cuántos años calculas que tiene la Tierra?</div>
+
+      <!-- ---- Línea de tiempo interactiva ---- -->
+      <div class="timeline" data-timeline>
+
+        <!-- Tarjeta que muestra el momento seleccionado -->
+        <div class="timeline-display">
+          <div class="timeline-globe" data-timeline-globe aria-hidden="true">
+            <!-- Aquí se puede reemplazar por la imagen real del globo de cada época -->
+            <span data-timeline-emoji>🌋</span>
+          </div>
+          <div class="timeline-info">
+            <span class="timeline-era" data-timeline-era>Eón Hadeano</span>
+            <h3 class="timeline-age" data-timeline-age>Hace 4,600 Ma</h3>
+            <p class="timeline-desc" data-timeline-desc>
+              El planeta era una bola de magma.
+            </p>
+          </div>
+        </div>
+
+        <!-- Control deslizante para recorrer el tiempo -->
+        <input
+          type="range"
+          class="timeline-slider"
+          data-timeline-slider
+          min="0" max="10" value="0" step="1"
+          aria-label="Recorre la historia de la Tierra"
+        />
+
+        <div class="timeline-labels">
+          <span>Origen de la Tierra</span>
+          <span>Hoy</span>
+        </div>
+
+        <!-- Datos de cada momento (los lee el JavaScript) -->
+        <script type="application/json" data-timeline-data>
+        [
+          {"era":"Eón Hadeano","edad":"Hace 4,600 Ma","desc":"El planeta era una bola de magma.","emoji":"🌋"},
+          {"era":"Eón Hadeano","edad":"Hace 4,550 Ma","desc":"La Luna se formó tras un impacto contra la Tierra.","emoji":"🌑"},
+          {"era":"Eón Hadeano","edad":"Hace 4,400 Ma","desc":"Las capas de la Tierra se definieron.","emoji":"🪐"},
+          {"era":"Eón Hadeano","edad":"Hace 4,000 Ma","desc":"Los primeros océanos y continentes se formaron.","emoji":"🌊"},
+          {"era":"Proterozoico Tardío","edad":"Hace 650 Ma","desc":"Gran parte del planeta estuvo cubierto de hielo.","emoji":"❄️"},
+          {"era":"Devónico Temprano","edad":"Hace 390 Ma","desc":"Los continentes comenzaban a agruparse.","emoji":"🗺️"},
+          {"era":"Carbonífero Tardío","edad":"Hace 306 Ma","desc":"Las masas continentales se unieron formando Pangea.","emoji":"🧩"},
+          {"era":"Triásico Temprano","edad":"Hace 247 Ma","desc":"Pangea: podías caminar de África a la Antártida.","emoji":"🚶"},
+          {"era":"Límite Cretácico-Paleógeno","edad":"Hace 66 Ma","desc":"Los continentes ya se parecen a los actuales.","emoji":"☄️"},
+          {"era":"Última era glacial","edad":"Hace 18,000 años","desc":"Grandes capas de hielo cubrían el norte del planeta.","emoji":"🧊"},
+          {"era":"Época actual","edad":"Presente","desc":"Los continentes que conocemos hoy.","emoji":"🌎"}
+        ]
+        </script>
       </div>
-      <!-- Aquí irán las imágenes de los mapas de continentes y el video -->
+
+      <div class="question-bubble" style="margin-top: 20px;">
+        ¿Crees que la Tierra ha estado cubierta de hielo alguna vez?
+      </div>
     </div>
   </section>
 

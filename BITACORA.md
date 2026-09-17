@@ -9,7 +9,30 @@ puede retomar exactamente donde se quedó el otro.
 
 ---
 
-## 2026-09-08 (2da sesión) — Benjamín (con ayuda de Claude)
+## 2026-09-08 (3ra sesión) — Benjamín 
+
+**Se hizo:**
+- Se completó la estación **TIERRA** con el texto real de las fotos.
+- Se agregó una **línea de tiempo interactiva** con control deslizante:
+  el visitante arrastra y recorre 11 momentos del planeta, desde el Eón
+  Hadeano (hace 4,600 Ma, bola de magma) hasta la época actual, pasando
+  por la formación de la Luna, los primeros océanos, Pangea, el límite
+  Cretácico-Paleógeno y la última era glacial.
+- Los datos de cada momento viven en un bloque JSON dentro del HTML, así
+  que es fácil editarlos o agregar momentos sin tocar el JavaScript.
+- Por ahora cada época se representa con un emoji; se puede sustituir
+  por las imágenes reales de los globos terráqueos de la rampa.
+
+**Pendiente / siguiente sesión:**
+- Sustituir los emojis de la línea de tiempo por las imágenes reales
+  de los globos (las fotos del panel las tenemos, faltan los archivos
+  digitales del museo).
+- (se mantiene lo demás pendiente: colaborador, resto de estaciones,
+  hosting, sistema de puntos/quiz)
+
+---
+
+## 2026-09-08 (2da sesión) — Benjamín 
 
 **Se hizo:**
 - Se completó la estación **FÓSIL** con el texto real de las fotos
@@ -28,7 +51,7 @@ puede retomar exactamente donde se quedó el otro.
 
 ---
 
-## 2026-09-08 — Benjamín (con ayuda de Claude)
+## 2026-09-08 — Benjamín 
 
 **Se hizo:**
 - Se creó el repositorio `rampa-papalote-uanl` en GitHub.
