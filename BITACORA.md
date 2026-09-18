@@ -9,7 +9,65 @@ puede retomar exactamente donde se quedó el otro.
 
 ---
 
-## 2026-09-08 (4ta sesión) — Benjamín 
+## 2026-09-08 (6ta sesión) — Benjamín 6
+
+**Se hizo:**
+- Se agregó la estación **ECOSISTEMA** con una **gráfica de dona interactiva**
+  (construida en SVG a partir de un JSON, igual patrón reutilizable que la
+  línea de tiempo): muestra la composición de fósiles de Vallecillo
+  (53% peces, 14% coprolitos, 13% moluscos bivalvos, 9% partículas
+  carbonatadas, 9% ammonites, 1% octópodos, 1% otros). Al pasar el mouse
+  por la leyenda o por la gráfica, se resalta el segmento correspondiente.
+- Se agregó la estación **PALEONTÓLOGOS** con el texto real legible del
+  panel (cooperación paleontólogos/sociedad civil, trabajo de campo y
+  laboratorio) y una galería de las herramientas reales que aparecen en
+  la vitrina de la rampa (martillo geológico, brochas, guantes, cincel,
+  brújula, GPS, sombrero, pala).
+- **Aviso importante:** en el panel de Paleontólogos había 9 pasos
+  numerados en las fotos, pero el texto se ve demasiado pequeño/borroso
+  para transcribirlo con certeza. Se dejó una nota visible en el sitio
+  y aquí en la bitácora para que se confirme con el museo o con fotos
+  de mejor resolución antes de la entrega final.
+- Se agregaron "Ecosistema" y "Paleontólogos" al menú de navegación.
+
+**Pendiente / siguiente sesión:**
+- Confirmar/transcribir el texto de los 9 pasos del panel de Paleontólogos.
+- Estaciones que faltan: Evidencia, Fósil Guía, Conocimiento, Ancestro,
+  Adaptación, Recursos, Conciencia.
+- (se mantiene lo demás: colaborador, fotos/videos reales, hosting,
+  gamificación visible, decisión de paleta)
+
+---
+
+## 2026-09-08 (5ta sesión) — Benjamín 5
+
+**Se hizo — mejoras de experiencia de usuario (aplican a todo el sitio):**
+- **Barra de progreso** arriba de la pantalla: muestra cuánto llevas
+  recorrido de la rampa completa, no solo de una estación.
+- **Menú activo (scrollspy):** el enlace de la estación que estás viendo
+  se resalta automáticamente en el menú, así el visitante siempre sabe
+  dónde está.
+- **Animación de aparición:** cada estación aparece con un fade + subtle
+  slide al hacer scroll hasta ella, para que se sienta más como un
+  recorrido y menos como una página estática. Se respeta la preferencia
+  de "reducir movimiento" del sistema (accesibilidad).
+- **Botón flotante "volver arriba":** aparece después de bajar un poco
+  y regresa al inicio con scroll suave.
+- **Menú móvil mejorado:** ahora se abre/cierra con una animación, y se
+  cierra automáticamente al elegir una estación (antes se quedaba abierto).
+- **Accesibilidad:** se agregó un enlace "Saltar al contenido" (útil para
+  quien navega con teclado o lector de pantalla), visible solo al usarlo.
+
+**Pendiente / siguiente sesión:**
+- (se mantiene lo de sesiones anteriores)
+- Próximas mejoras de UX sugeridas para cuando avancemos más:
+  sistema de puntos/insignias visible en todo momento (ej. barra fija
+  con "X de 17 estaciones visitadas"), y optimizar imágenes/videos
+  reales cuando se suban (carga rápida en el wifi del museo).
+
+---
+
+## 2026-09-08 (4ta sesión) — Benjamín 4
 
 **Se hizo:**
 - Se completó la estación **CAMBIO** con el texto real: mares cretácicos
@@ -40,7 +98,7 @@ puede retomar exactamente donde se quedó el otro.
 
 ---
 
-## 2026-09-08 (3ra sesión) — Benjamín 
+## 2026-09-08 (3ra sesión) — Benjamín 3
 
 **Se hizo:**
 - Se completó la estación **TIERRA** con el texto real de las fotos.
@@ -63,7 +121,7 @@ puede retomar exactamente donde se quedó el otro.
 
 ---
 
-## 2026-09-08 (2da sesión) — Benjamín 
+## 2026-09-08 (2da sesión) — Benjamín 2
 
 **Se hizo:**
 - Se completó la estación **FÓSIL** con el texto real de las fotos
@@ -82,7 +140,7 @@ puede retomar exactamente donde se quedó el otro.
 
 ---
 
-## 2026-09-08 — Benjamín
+## 2026-09-08 — Benjamín 1
 
 **Se hizo:**
 - Se creó el repositorio `rampa-papalote-uanl` en GitHub.

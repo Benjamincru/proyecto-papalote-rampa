@@ -10,6 +10,13 @@
 </head>
 <body>
 
+  <!-- Accesibilidad: permite saltar el menú con teclado/lector de pantalla -->
+  <a href="#inicio" class="skip-link">Saltar al contenido</a>
+
+  <!-- Barra de progreso: muestra cuánto llevas recorrido de la rampa -->
+  <div class="progress-bar" id="progress-bar"></div>
+
+
   <!-- ============ ENCABEZADO ============ -->
   <header class="site-header">
     <div class="header-inner">
@@ -23,6 +30,8 @@
         <a href="#cambio">Cambio</a>
         <a href="#aramberri">Aramberri</a>
         <a href="#fosil">Fósil</a>
+        <a href="#ecosistema">Ecosistema</a>
+        <a href="#paleontologos">Paleontólogos</a>
         <a href="#sostenible">Sostenible</a>
       </nav>
       <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">☰</button>
@@ -46,7 +55,7 @@
   </section>
 
   <!-- ============ ESTACIÓN: TIERRA (línea de tiempo interactiva) ============ -->
-  <section class="station station--panel" id="tierra">
+  <section class="station station--panel reveal" id="tierra">
     <div class="station-inner">
       <span class="station-kicker">Estación 1</span>
       <h2 class="station-title">TIERRA</h2>
@@ -117,7 +126,7 @@
   </section>
 
   <!-- ============ ESTACIÓN: CAMBIO ============ -->
-  <section class="station station--light" id="cambio">
+  <section class="station station--light reveal" id="cambio">
     <div class="station-inner">
       <span class="station-kicker">Estación</span>
       <h2 class="station-title">CAMBIO</h2>
@@ -179,7 +188,7 @@
   </section>
 
   <!-- ============ ESTACIÓN: ARAMBERRI (prototipo completo) ============ -->
-  <section class="station station--dark" id="aramberri">
+  <section class="station station--dark reveal" id="aramberri">
     <div class="station-inner">
       <span class="station-kicker">Estación destacada</span>
       <h2 class="station-title">ARAMBERRI</h2>
@@ -233,7 +242,7 @@
   </section>
 
   <!-- ============ ESTACIÓN: FÓSIL (completa, interactiva) ============ -->
-  <section class="station station--panel" id="fosil">
+  <section class="station station--panel reveal" id="fosil">
     <div class="station-inner">
       <span class="station-kicker">Estación</span>
       <h2 class="station-title">FÓSIL</h2>
@@ -294,8 +303,79 @@
     </div>
   </section>
 
+  <!-- ============ ESTACIÓN: ECOSISTEMA (gráfica interactiva) ============ -->
+  <section class="station station--light reveal" id="ecosistema">
+    <div class="station-inner">
+      <span class="station-kicker">Estación</span>
+      <h2 class="station-title">ECOSISTEMA</h2>
+      <p class="station-text">
+        Los fósiles encontrados en Vallecillo nos permiten reconstruir cómo
+        era ese ecosistema marino hace millones de años. Cada tipo de
+        organismo que se fosilizó cuenta qué tan abundante era en ese mar.
+      </p>
+
+      <div class="donut-block" data-donut>
+        <div class="donut-chart" data-donut-chart aria-hidden="true"></div>
+
+        <ul class="donut-legend" data-donut-legend></ul>
+
+        <script type="application/json" data-donut-data>
+        [
+          {"label":"Peces","value":53,"color":"#4E9F5C"},
+          {"label":"Coprolitos (heces fosilizadas)","value":14,"color":"#F0954C"},
+          {"label":"Moluscos bivalvos","value":13,"color":"#2B6E7C"},
+          {"label":"Partículas carbonatadas","value":9,"color":"#C89B6A"},
+          {"label":"Ammonites","value":9,"color":"#8A6BB1"},
+          {"label":"Octópodos (pulpos)","value":1,"color":"#E0607E"},
+          {"label":"Otros","value":1,"color":"#9AA5A0"}
+        ]
+        </script>
+      </div>
+
+      <div class="question-bubble">
+        ¿Por qué crees que había tantos peces en el mar de Vallecillo?
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ESTACIÓN: PALEONTÓLOGOS (galería de herramientas) ============ -->
+  <section class="station station--panel reveal" id="paleontologos">
+    <div class="station-inner">
+      <span class="station-kicker">Estación</span>
+      <h2 class="station-title">PALEONTÓLOGOS</h2>
+      <p class="station-text">
+        Los paleontólogos y la sociedad civil cooperan para descubrir los
+        secretos que guardan las rocas sobre la historia geológica de la
+        Tierra.
+      </p>
+      <p class="station-text">
+        Bajo el sol, a ras del suelo, con cincel y brocha, además del
+        trabajo en el laboratorio, se estudian los fósiles para conocer el
+        ambiente y los seres vivos que existieron hace millones de años.
+      </p>
+
+      <div class="tool-gallery">
+        <div class="tool-chip"><span class="tool-icon">🔨</span>Martillo geológico</div>
+        <div class="tool-chip"><span class="tool-icon">🖌️</span>Brochas</div>
+        <div class="tool-chip"><span class="tool-icon">🧤</span>Guantes</div>
+        <div class="tool-chip"><span class="tool-icon">🪓</span>Cincel</div>
+        <div class="tool-chip"><span class="tool-icon">🧭</span>Brújula</div>
+        <div class="tool-chip"><span class="tool-icon">📍</span>GPS</div>
+        <div class="tool-chip"><span class="tool-icon">🎩</span>Sombrero</div>
+        <div class="tool-chip"><span class="tool-icon">⛏️</span>Pala</div>
+      </div>
+
+      <div class="question-bubble">¿Qué harías si encuentras un fósil?</div>
+
+      <p class="station-note">
+        Nota: el listado de herramientas se tomó de la vitrina
+        real de la rampa; falta confirmar con el museo como quisieran que se agregue.
+      </p>
+    </div>
+  </section>
+
   <!-- ============ ESTACIÓN: SOSTENIBLE (cierre) ============ -->
-  <section class="station station--light" id="sostenible">
+  <section class="station station--light reveal" id="sostenible">
     <div class="station-inner">
       <span class="station-kicker">Reflexión final</span>
       <h2 class="station-title">SOSTENIBLE</h2>
@@ -313,6 +393,9 @@
     <p>Proyecto de Residencia Profesional · Instituto Tecnológico de Nuevo León</p>
     <p>En colaboración con Papalote Museo del Niño Monterrey</p>
   </footer>
+
+  <!-- Botón flotante: volver al inicio del recorrido -->
+  <button class="back-to-top" id="back-to-top" aria-label="Volver arriba">↑</button>
 
   <script src="js/script.js"></script>
 </body>
