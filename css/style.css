@@ -440,6 +440,10 @@ a { color: inherit; text-decoration: none; }
   color: var(--azul-fosil);
 }
 
+.timeline--compact { margin-top: 20px; }
+.timeline--compact .timeline-globe { width: 90px; height: 90px; font-size: 2.4rem; }
+.timeline--compact .timeline-age { font-size: 1.3rem; }
+
 /* ============ PIE DE PÁGINA ============ */
 .site-footer {
   text-align: center;

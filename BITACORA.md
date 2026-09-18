@@ -9,6 +9,37 @@ puede retomar exactamente donde se quedó el otro.
 
 ---
 
+## 2026-09-08 (4ta sesión) — Benjamín 
+
+**Se hizo:**
+- Se completó la estación **CAMBIO** con el texto real: mares cretácicos
+  cubriendo el NE de México, arrecifes en Mina, mar profundo en Aramberri
+  y Vallecillo, y el retiro gradual del mar hacia el Golfo de México.
+- Se agregó un **mini mapa interactivo** (mismo componente de línea de
+  tiempo que Tierra) con 4 momentos: hace 145 Ma, 90 Ma, 66 Ma y el
+  presente, mostrando cómo se retiró el mar de Nuevo León.
+- Se **refactorizó `script.js`** para que la línea de tiempo funcione con
+  varias instancias en la misma página (antes solo soportaba una). Esto
+  es importante: si en otra estación quieren otra línea de tiempo, ya
+  funciona automáticamente sin tocar el JavaScript, solo agregando el
+  bloque HTML con su propio JSON de datos.
+- Se agregó "Cambio" al menú de navegación.
+
+**Pendiente / siguiente sesión:**
+- (se mantiene lo pendiente: colaborador, fotos/imágenes reales,
+  estaciones restantes — Ecosistema, Evidencia, Paleontólogos, Fósil
+  Guía, Conocimiento, Ancestro, Adaptación, Recursos, Conciencia —,
+  hosting en Netlify/Vercel, sistema de puntos/quiz)
+- Nota: en otra sesión se habló de hacer un documento de diseño aparte
+  para el asesor, con una paleta ligeramente distinta a la que ya está
+  en el CSS (extraída directo del home de papalotemty.org.mx: azul
+  primario, naranja/rojo de acento, verde lima y morado secundarios,
+  personajes geométricos con cara, trazos punteados a mano). Falta
+  decidir si se ajusta la paleta del sitio a esa referencia o se deja
+  la actual (verde/naranja/madera).
+
+---
+
 ## 2026-09-08 (3ra sesión) — Benjamín 
 
 **Se hizo:**
@@ -51,7 +82,7 @@ puede retomar exactamente donde se quedó el otro.
 
 ---
 
-## 2026-09-08 — Benjamín 
+## 2026-09-08 — Benjamín
 
 **Se hizo:**
 - Se creó el repositorio `rampa-papalote-uanl` en GitHub.

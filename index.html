@@ -20,6 +20,7 @@
       <nav class="main-nav" id="main-nav">
         <a href="#inicio">Inicio</a>
         <a href="#tierra">Tierra</a>
+        <a href="#cambio">Cambio</a>
         <a href="#aramberri">Aramberri</a>
         <a href="#fosil">Fósil</a>
         <a href="#sostenible">Sostenible</a>
@@ -111,6 +112,68 @@
 
       <div class="question-bubble" style="margin-top: 20px;">
         ¿Crees que la Tierra ha estado cubierta de hielo alguna vez?
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ESTACIÓN: CAMBIO ============ -->
+  <section class="station station--light" id="cambio">
+    <div class="station-inner">
+      <span class="station-kicker">Estación</span>
+      <h2 class="station-title">CAMBIO</h2>
+      <p class="station-text">
+        Los procesos geológicos que ocurrieron en el pasado definieron los
+        paisajes actuales.
+      </p>
+      <p class="station-text">
+        En el Cretácico, mares cálidos y poco profundos cubrían el Noreste
+        de México. La zona que hoy conocemos como el municipio de Mina
+        estaba rodeada de grandes extensiones de arrecifes, mientras que
+        Aramberri y Vallecillo eran zonas de mar profundo, con aguas
+        tranquilas y una gran variedad de organismos. Con el tiempo, el mar
+        se retiró gradualmente hasta la costa actual del Golfo de México.
+      </p>
+
+      <div class="question-bubble">
+        ¿Cómo crees que será Nuevo León dentro de algunos millones de años?
+      </div>
+
+      <!-- ---- Mini mapa interactivo: el retiro del mar ---- -->
+      <div class="timeline timeline--compact" data-timeline>
+        <div class="timeline-display">
+          <div class="timeline-globe" data-timeline-globe aria-hidden="true">
+            <span data-timeline-emoji>🌊</span>
+          </div>
+          <div class="timeline-info">
+            <span class="timeline-era" data-timeline-era>Cretácico Temprano</span>
+            <h3 class="timeline-age" data-timeline-age>Hace 145 Ma</h3>
+            <p class="timeline-desc" data-timeline-desc>
+              Nuevo León estaba cubierto por mares cálidos y poco profundos.
+            </p>
+          </div>
+        </div>
+
+        <input
+          type="range"
+          class="timeline-slider"
+          data-timeline-slider
+          min="0" max="3" value="0" step="1"
+          aria-label="Recorre cómo se retiró el mar de Nuevo León"
+        />
+
+        <div class="timeline-labels">
+          <span>Hace 145 millones de años</span>
+          <span>Hoy</span>
+        </div>
+
+        <script type="application/json" data-timeline-data>
+        [
+          {"era":"Cretácico Temprano","edad":"Hace 145 Ma","desc":"Nuevo León estaba cubierto por mares cálidos y poco profundos.","emoji":"🌊"},
+          {"era":"Cretácico Tardío","edad":"Hace 90 Ma","desc":"Vallecillo era un mar profundo, sin oxígeno, ideal para preservar fósiles.","emoji":"🐟"},
+          {"era":"Límite Cretácico-Paleógeno","edad":"Hace 66 Ma","desc":"El mar comenzó a retirarse hacia el Golfo de México.","emoji":"🏔️"},
+          {"era":"Época actual","edad":"Presente","desc":"El mar se retiró por completo; hoy vemos las montañas de Nuevo León.","emoji":"⛰️"}
+        ]
+        </script>
       </div>
     </div>
   </section>

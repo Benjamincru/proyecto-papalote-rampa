@@ -77,10 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
     render();
   }
 
-  // --- Estación TIERRA: línea de tiempo interactiva ---
-  const timeline = document.querySelector('[data-timeline]');
-
-  if (timeline) {
+  // --- Línea(s) de tiempo interactivas (Tierra, Cambio, y las que sigan) ---
+  // Se busca CADA elemento con [data-timeline] en la página y se le da
+  // su propio slider independiente, para poder reutilizar el mismo
+  // componente en distintas estaciones.
+  document.querySelectorAll('[data-timeline]').forEach((timeline) => {
     const slider = timeline.querySelector('[data-timeline-slider]');
     const dataScript = timeline.querySelector('[data-timeline-data]');
     const eraEl = timeline.querySelector('[data-timeline-era]');
@@ -88,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const descEl = timeline.querySelector('[data-timeline-desc]');
     const emojiEl = timeline.querySelector('[data-timeline-emoji]');
 
-    // Leemos los momentos históricos desde el bloque JSON del HTML
     let momentos = [];
     try {
       momentos = JSON.parse(dataScript.textContent);
@@ -96,25 +96,25 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('No se pudieron leer los datos de la línea de tiempo:', e);
     }
 
-    if (momentos.length > 0) {
-      slider.max = momentos.length - 1;
+    if (momentos.length === 0) return;
 
-      function mostrarMomento(indice) {
-        const m = momentos[indice];
-        if (!m) return;
-        eraEl.textContent = m.era;
-        ageEl.textContent = m.edad;
-        descEl.textContent = m.desc;
-        emojiEl.textContent = m.emoji;
-      }
+    slider.max = momentos.length - 1;
 
-      slider.addEventListener('input', () => {
-        mostrarMomento(Number(slider.value));
-      });
-
-      mostrarMomento(0);
+    function mostrarMomento(indice) {
+      const m = momentos[indice];
+      if (!m) return;
+      eraEl.textContent = m.era;
+      ageEl.textContent = m.edad;
+      descEl.textContent = m.desc;
+      emojiEl.textContent = m.emoji;
     }
-  }
+
+    slider.addEventListener('input', () => {
+      mostrarMomento(Number(slider.value));
+    });
+
+    mostrarMomento(0);
+  });
 
   // --- Espacio reservado para futuras funciones ---
   // Ejemplos de lo que agregaremos estación por estación:
