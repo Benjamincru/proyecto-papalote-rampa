@@ -9,6 +9,115 @@ puede retomar exactamente donde se quedó el otro.
 
 ---
 
+## 2026-09-18 (4ta sesión del día) — Benjamín 
+
+**Se hizo:**
+- Se integró el **logo oficial de Papalote Museo del Niño Monterrey**
+  (la mariposa verde con formas geométricas) en 3 lugares: el encabezado
+  del sitio, la pantalla de entrada (arriba del título animado), y como
+  ícono de la pestaña del navegador (favicon).
+- Se guardaron 2 versiones optimizadas en `/img`: `logo-papalote.png`
+  (500x500, uso general) y `favicon-papalote.png` (64x64, ícono de pestaña).
+
+**Pendiente / siguiente sesión:**
+- (se mantiene todo lo anterior)
+
+---
+
+## 2026-09-18 (3ra sesión del día) — Benjamín 
+
+**Se hizo:**
+- Se agregó una **pantalla de entrada (intro)** a pantalla completa,
+  inspirada en el patrón de estudios creativos (título animándose letra
+  por letra + botón "Comenzar recorrido"). Al presionar el botón, la
+  pantalla se desvanece y revela el sitio; mientras tanto el scroll de
+  la página queda bloqueado para que el efecto se vea completo.
+- Se respeta la preferencia de "reducir movimiento" (accesibilidad):
+  si el visitante la tiene activada, el texto aparece directo sin animar.
+
+**Pendiente / siguiente sesión:**
+- (se mantiene todo lo anterior)
+- Cuando el contenido esté más avanzado, se puede pulir esta intro con
+  un ícono/logo propio del proyecto en vez de solo texto.
+
+---
+
+## 2026-09-18 (2da sesión del día) — Benjamín 
+
+**Se hizo:**
+- Se agregaron 3 fotos de fósiles de referencia a `/img`: `amonite-especimen.jpg`,
+  `pez-fosil-raya.jpg`, `pez-fosil-pequeno.jpg` (comprimidas de varios MB a
+  ~170-200 KB cada una para que carguen rápido).
+- Se construyó un **componente de carrusel reutilizable** (mismo patrón que
+  la línea de tiempo y la gráfica de dona: JSON + JavaScript genérico) y se
+  integró en la estación **FÓSIL**, mostrando esas 3 fotos con flechas y
+  puntos de navegación.
+- Se **corrigió el visor 3D de Aramberri**: el iframe de Sketchfab
+  (modelo "Ocean Pliosaur Mosasaurus" de Etherion Designs) traía parámetros
+  que ocultaban el crédito al autor (`ui_watermark_link=0`,
+  `ui_watermark_brand=0`). Se quitaron esos parámetros y se agregó de vuelta
+  el texto de atribución con enlaces, como exige Sketchfab para uso gratuito
+  de modelos de otros autores. El visor sigue siendo 100% interactivo
+  (el visitante puede rotar/zoom con el dedo o mouse).
+- Ajuste final: se reemplazó por el código de embed **oficial exacto** que
+  entrega Sketchfab (copiado directamente desde su botón "Embed viewer"),
+  para no dejar ninguna duda sobre la atribución correcta.
+
+**Aviso de derechos de autor:** se recibió una 4ta imagen (`fosil.jpg`,
+una lámina en blanco y negro de una publicación científica en francés)
+que **NO se integró al sitio** porque parece escaneada de un artículo/libro
+impreso, con posibles derechos de autor del editor. Se guardó en `/img`
+como `NOUSAR-placa-cientifica-verificar-licencia.jpg` (el nombre lo dice:
+no usar hasta confirmar la licencia). Si se puede confirmar que es de
+dominio público o de una fuente con licencia libre, se puede integrar
+después.
+
+**Pendiente / siguiente sesión:**
+- Reemplazar las 3 fotos de fósiles de referencia por fotos oficiales de
+  la rampa cuando estén disponibles.
+- Decidir qué hacer con la 4ta imagen (buscar la fuente original o
+  descartarla definitivamente).
+- (se mantiene lo demás: colaborador, confirmar texto de Paleontólogos,
+  estaciones restantes, hosting)
+
+---
+
+## 2026-09-18 — Sesión 7 mas visual
+
+**Se hizo (en otra herramienta, ahora integrado como base de trabajo):**
+- Se resolvió el pendiente de la **paleta de color**: se ajustó a los
+  colores reales de papalotemty.org.mx — verde `#27A64C`, naranja/rojo
+  `#F05A28`, azul `#00AEEF`.
+- Se agregó un estilo visual **"clay"** (tarjetas y botones con efecto
+  3D suave y muy redondeado) aplicado a botones, tarjetas y controles
+  en todo el sitio.
+- Se agregó **gamificación real**:
+  - Quiz de opción múltiple en la estación Tierra.
+  - Minijuego "rasca y descubre" en la estación Fósil (canvas con
+    interacción de mouse/dedo para revelar un fósil).
+  - Widget de "mochila" flotante con contador de insignias — esto
+    resuelve el pendiente de "sistema de gamificación visible".
+- Se agregaron las primeras imágenes reales/de prueba en `/img`:
+  `Amonite.png`, `pez.jpg`, `fossil-pez.svg`.
+- Se agregaron fondos decorativos con parallax sutil (formas geométricas).
+
+**Nota del equipo:** este trabajo se hizo con otra herramienta (Antigravity)
+en paralelo; se revisó y se adoptó como base de trabajo actual porque es
+compatible y superior a la versión anterior. A partir de aquí seguimos
+trabajando sobre esta versión.
+
+**Pendiente / siguiente sesión:**
+- Conseguir/colocar el video del pliosaurio (render de Sketchfab) en el
+  espacio ya reservado de la estación Aramberri.
+- Conseguir imágenes de prueba de peces, moluscos, amonites y del
+  planeta en distintas épocas (usar bancos con licencia libre: Wikimedia
+  Commons, Smithsonian Open Access, Unsplash/Pexels — marcarlas como
+  placeholder y reemplazarlas antes de la entrega final).
+- (se mantiene lo demás: colaborador, confirmar texto de Paleontólogos,
+  estaciones restantes, hosting)
+
+---
+
 ## 2026-09-08 (6ta sesión) — Benjamín 6
 
 **Se hizo:**

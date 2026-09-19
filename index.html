@@ -4,11 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Rampa del Planeta | Papalote Museo del Niño Monterrey</title>
+  <link rel="icon" type="image/png" href="img/favicon-papalote.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
+  <!-- ============ PANTALLA DE ENTRADA (INTRO) ============ -->
+  <div class="intro-overlay" id="intro-overlay">
+    <div class="intro-content">
+      <img src="img/logo-papalote.png" alt="Papalote Museo del Niño Monterrey" class="intro-logo">
+      <h1 class="intro-title" aria-label="La Rampa del Planeta">
+        <span>L</span><span>a</span><span>&nbsp;</span><span>R</span><span>a</span><span>m</span><span>p</span><span>a</span><span>&nbsp;</span><span>d</span><span>e</span><span>l</span><span>&nbsp;</span><span>P</span><span>l</span><span>a</span><span>n</span><span>e</span><span>t</span><span>a</span>
+      </h1>
+      <p class="intro-subtitle">Papalote Museo del Niño Monterrey</p>
+      <button class="intro-btn clay-btn" id="intro-start">Comenzar recorrido</button>
+    </div>
+  </div>
+
+  <!-- Elementos decorativos (Fondo animado) -->
+  <div class="bg-decorations">
+    <div class="ramp-path"></div>
+    <div class="geo-char char-square" data-parallax="0.05"></div>
+    <div class="geo-char char-circle" data-parallax="0.08"></div>
+    <div class="geo-char char-triangle" data-parallax="0.12"></div>
+  </div>
 
   <!-- Accesibilidad: permite saltar el menú con teclado/lector de pantalla -->
   <a href="#inicio" class="skip-link">Saltar al contenido</a>
@@ -21,7 +42,7 @@
   <header class="site-header">
     <div class="header-inner">
       <div class="logo-group">
-        <span class="logo-dot"></span>
+        <img src="img/logo-papalote.png" alt="Papalote Museo del Niño Monterrey" class="logo-img">
         <span class="logo-text">La Rampa del Planeta</span>
       </div>
       <nav class="main-nav" id="main-nav">
@@ -50,7 +71,7 @@
         Monstruo de Aramberri, y descubre cómo los fósiles cuentan
         la historia de Nuevo León.
       </p>
-      <a href="#tierra" class="hero-cta">Comenzar el recorrido ↓</a>
+      <a href="#tierra" class="hero-cta clay-btn">Comenzar el recorrido ↓</a>
     </div>
   </section>
 
@@ -67,10 +88,18 @@
         estar bajo un mar profundo en otro tiempo.
       </p>
 
-      <div class="question-bubble">¿Cuántos años calculas que tiene la Tierra?</div>
+      <!-- Quiz interactivo en vez de globo estático -->
+      <div class="quiz-container clay-card" data-quiz="tierra" style="padding: 24px; margin-top: 16px;">
+        <p class="quiz-question" style="font-weight: 800; font-family: var(--font-titulo); font-size: 1.3rem;">¿Cuántos años calculas que tiene la Tierra?</p>
+        <div class="quiz-options" style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;">
+          <button class="quiz-btn clay-btn" data-badge="tierra" data-correct="false" style="background: var(--gris-panel); color: var(--tinta); font-size: 0.9rem; padding: 10px 16px;">1,000 años</button>
+          <button class="quiz-btn clay-btn" data-badge="tierra" data-correct="false" style="background: var(--gris-panel); color: var(--tinta); font-size: 0.9rem; padding: 10px 16px;">Un millón de años</button>
+          <button class="quiz-btn clay-btn" data-badge="tierra" data-correct="true" style="background: var(--gris-panel); color: var(--tinta); font-size: 0.9rem; padding: 10px 16px;">4,600 millones de años</button>
+        </div>
+      </div>
 
       <!-- ---- Línea de tiempo interactiva ---- -->
-      <div class="timeline" data-timeline>
+      <div class="timeline clay-card" data-timeline>
 
         <!-- Tarjeta que muestra el momento seleccionado -->
         <div class="timeline-display">
@@ -119,9 +148,11 @@
         </script>
       </div>
 
+      <!-- Quitado temporalmente para evitar sobrecarga de quizzes:
       <div class="question-bubble" style="margin-top: 20px;">
         ¿Crees que la Tierra ha estado cubierta de hielo alguna vez?
       </div>
+      -->
     </div>
   </section>
 
@@ -143,12 +174,18 @@
         se retiró gradualmente hasta la costa actual del Golfo de México.
       </p>
 
-      <div class="question-bubble">
-        ¿Cómo crees que será Nuevo León dentro de algunos millones de años?
+      <!-- Quiz Cambio -->
+      <div class="quiz-container clay-card" data-quiz="cambio" style="padding: 24px; margin-top: 16px;">
+        <p class="quiz-question" style="font-weight: 800; font-family: var(--font-titulo); font-size: 1.2rem;">¿Cómo crees que será Nuevo León dentro de millones de años?</p>
+        <div class="quiz-options" style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;">
+          <button class="quiz-btn clay-btn" data-badge="cambio" data-correct="false" style="background: var(--gris-panel); color: var(--tinta); font-size: 0.9rem; padding: 10px 16px;">Lleno de lava</button>
+          <button class="quiz-btn clay-btn" data-badge="cambio" data-correct="true" style="background: var(--gris-panel); color: var(--tinta); font-size: 0.9rem; padding: 10px 16px;">Es un misterio cambiante</button>
+          <button class="quiz-btn clay-btn" data-badge="cambio" data-correct="false" style="background: var(--gris-panel); color: var(--tinta); font-size: 0.9rem; padding: 10px 16px;">Igual que ahora</button>
+        </div>
       </div>
 
       <!-- ---- Mini mapa interactivo: el retiro del mar ---- -->
-      <div class="timeline timeline--compact" data-timeline>
+      <div class="timeline timeline--compact clay-card" data-timeline>
         <div class="timeline-display">
           <div class="timeline-globe" data-timeline-globe aria-hidden="true">
             <span data-timeline-emoji>🌊</span>
@@ -212,15 +249,15 @@
           </p>
 
           <div class="fact-badges">
-            <div class="fact-badge">
+            <div class="fact-badge clay-card" style="padding: 16px; background: transparent; border: none; box-shadow: inset 4px 4px 8px rgba(255, 255, 255, 0.1), inset -4px -4px 8px rgba(0, 0, 0, 0.2);">
               <span class="fact-badge-num">1985</span>
               <span class="fact-badge-label">Año de su descubrimiento</span>
             </div>
-            <div class="fact-badge">
+            <div class="fact-badge clay-card" style="padding: 16px; background: transparent; border: none; box-shadow: inset 4px 4px 8px rgba(255, 255, 255, 0.1), inset -4px -4px 8px rgba(0, 0, 0, 0.2);">
               <span class="fact-badge-num">18 m</span>
               <span class="fact-badge-label">Tamaño del ejemplar (joven)</span>
             </div>
-            <div class="fact-badge">
+            <div class="fact-badge clay-card" style="padding: 16px; background: transparent; border: none; box-shadow: inset 4px 4px 8px rgba(255, 255, 255, 0.1), inset -4px -4px 8px rgba(0, 0, 0, 0.2);">
               <span class="fact-badge-num">25 m</span>
               <span class="fact-badge-label">Tamaño estimado de un adulto</span>
             </div>
@@ -228,9 +265,9 @@
         </div>
 
         <div class="aramberri-media">
-          <!-- Reemplazar con la foto real del panel/fósil cuando la tengan -->
-          <div class="media-placeholder">
-            Foto o video del<br>Monstruo de Aramberri
+          <div class="sketchfab-embed-wrapper clay-card" style="overflow: hidden; padding: 0; box-sizing: border-box;">
+            <iframe title="Ocean Pliosaur Mosasaurus" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/19e654cf2d2e4e98bcf1d933001353f0/embed" style="width: 100%; height: 350px; display: block;"> </iframe>
+            <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/ocean-pliosaur-mosasaurus-19e654cf2d2e4e98bcf1d933001353f0" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Ocean Pliosaur Mosasaurus </a> by <a href="https://sketchfab.com/EtherionDesigns" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Etherion Designs </a> on <a href="https://sketchfab.com" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p>
           </div>
         </div>
       </div>
@@ -259,10 +296,18 @@
         considerados "joyas de la paleontología".
       </p>
 
-      <div class="question-bubble">¿Sabes qué es un fósil?</div>
+      <!-- Quiz Fósil -->
+       <div class="quiz-container clay-card" data-quiz="fosil" style="padding: 24px; margin-top: 16px;">
+        <p class="quiz-question" style="font-weight: 800; font-family: var(--font-titulo); font-size: 1.2rem;">¿Dónde hay de los mejores fósiles del mundo?</p>
+        <div class="quiz-options" style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;">
+          <button class="quiz-btn clay-btn" data-badge="fosil" data-correct="true" style="background: var(--gris-panel); color: var(--tinta); font-size: 0.9rem; padding: 10px 16px;">Ecosistema de Vallecillo</button>
+          <button class="quiz-btn clay-btn" data-badge="fosil" data-correct="false" style="background: var(--gris-panel); color: var(--tinta); font-size: 0.9rem; padding: 10px 16px;">Mar de Aramberri</button>
+          <button class="quiz-btn clay-btn" data-badge="fosil" data-correct="false" style="background: var(--gris-panel); color: var(--tinta); font-size: 0.9rem; padding: 10px 16px;">Bajo la rampa</button>
+        </div>
+      </div>
 
       <!-- ---- Paso a paso interactivo: ¿cómo se forma un fósil? ---- -->
-      <div class="fossil-stepper" data-stepper>
+      <div class="fossil-stepper clay-card" data-stepper>
         <div class="fossil-stepper-tabs">
           <button class="fossil-tab is-active" data-fossil-track="amonite">Un amonite</button>
           <button class="fossil-tab" data-fossil-track="pez">Un pez</button>
@@ -288,9 +333,9 @@
         </ol>
 
         <div class="fossil-stepper-controls">
-          <button class="fossil-btn" data-fossil-prev>← Anterior</button>
+          <button class="fossil-btn clay-btn" style="padding: 10px 20px; font-size: 0.9rem;" data-fossil-prev>← Anterior</button>
           <span class="fossil-step-count" data-fossil-count>1 / 6</span>
-          <button class="fossil-btn" data-fossil-next>Siguiente →</button>
+          <button class="fossil-btn clay-btn" style="padding: 10px 20px; font-size: 0.9rem;" data-fossil-next>Siguiente →</button>
         </div>
       </div>
 
@@ -300,6 +345,39 @@
         su estudio permite reconocer los eventos que dieron origen a los
         paisajes, ambientes y seres vivos que conocemos hoy.
       </p>
+
+      <!-- ---- Carrusel de ejemplos reales de fósiles ---- -->
+      <h3 style="margin-top: 32px; font-size: 1.4rem;">Ejemplos de fósiles</h3>
+      <div class="carousel clay-card" data-carousel>
+        <div class="carousel-track" data-carousel-track></div>
+        <button class="carousel-arrow carousel-arrow--prev" data-carousel-prev aria-label="Fósil anterior">←</button>
+        <button class="carousel-arrow carousel-arrow--next" data-carousel-next aria-label="Fósil siguiente">→</button>
+        <div class="carousel-dots" data-carousel-dots></div>
+
+        <script type="application/json" data-carousel-data>
+        [
+          {"src":"img/amonite-especimen.jpg","alt":"Amonite fosilizado","caption":"Amonite fosilizado — su concha en espiral es de las formas más reconocibles del Cretácico."},
+          {"src":"img/pez-fosil-raya.jpg","alt":"Pez fósil","caption":"Pez fósil con aletas bien conservadas, similar a los encontrados en Vallecillo."},
+          {"src":"img/pez-fosil-pequeno.jpg","alt":"Pez fósil pequeño","caption":"Ejemplar pequeño: hasta los detalles de las espinas se preservaron."}
+        ]
+        </script>
+      </div>
+      <p class="station-note">
+        Nota del equipo: estas 3 fotos son de referencia (no son de la rampa
+        de Papalote) mientras conseguimos las fotos oficiales del museo;
+        van a reemplazarse antes de la entrega final.
+      </p>
+
+      <!-- Minijuego: Excava tu Fósil -->
+      <h3 style="margin-top: 32px; font-size: 1.4rem;">Minijuego: ¡Excava este bloque!</h3>
+      <p class="station-text" style="margin-bottom: 12px; font-size: 0.95rem;">Usa tu dedo o el mouse para limpiar la tierra y descubrir el misterio.</p>
+      <div class="scratch-card-container clay-card" style="position: relative; width: 100%; max-width: 400px; height: 250px; border-radius: 24px; overflow: hidden; background: var(--gris-panel); border: 4px solid var(--madera); margin-bottom: 24px;">
+        <div class="fossil-revealed" style="position: absolute; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+          <span style="font-size: 4rem;">🐟</span>
+          <b style="color: var(--verde-papalote); font-size: 1.2rem; text-align: center; padding: 0 10px;">¡Fósil de Pez descifrado!</b>
+        </div>
+        <canvas id="scratchCanvas" width="400" height="250" style="position: absolute; top: 0; left: 0; cursor: pointer; touch-action: none;"></canvas>
+      </div>
     </div>
   </section>
 
@@ -314,7 +392,7 @@
         organismo que se fosilizó cuenta qué tan abundante era en ese mar.
       </p>
 
-      <div class="donut-block" data-donut>
+      <div class="donut-block clay-card" data-donut>
         <div class="donut-chart" data-donut-chart aria-hidden="true"></div>
 
         <ul class="donut-legend" data-donut-legend></ul>
@@ -355,14 +433,14 @@
       </p>
 
       <div class="tool-gallery">
-        <div class="tool-chip"><span class="tool-icon">🔨</span>Martillo geológico</div>
-        <div class="tool-chip"><span class="tool-icon">🖌️</span>Brochas</div>
-        <div class="tool-chip"><span class="tool-icon">🧤</span>Guantes</div>
-        <div class="tool-chip"><span class="tool-icon">🪓</span>Cincel</div>
-        <div class="tool-chip"><span class="tool-icon">🧭</span>Brújula</div>
-        <div class="tool-chip"><span class="tool-icon">📍</span>GPS</div>
-        <div class="tool-chip"><span class="tool-icon">🎩</span>Sombrero</div>
-        <div class="tool-chip"><span class="tool-icon">⛏️</span>Pala</div>
+        <div class="tool-chip clay-card" style="padding: 12px 20px;"><span class="tool-icon">🔨</span>Martillo geológico</div>
+        <div class="tool-chip clay-card" style="padding: 12px 20px;"><span class="tool-icon">🖌️</span>Brochas</div>
+        <div class="tool-chip clay-card" style="padding: 12px 20px;"><span class="tool-icon">🧤</span>Guantes</div>
+        <div class="tool-chip clay-card" style="padding: 12px 20px;"><span class="tool-icon">🪓</span>Cincel</div>
+        <div class="tool-chip clay-card" style="padding: 12px 20px;"><span class="tool-icon">🧭</span>Brújula</div>
+        <div class="tool-chip clay-card" style="padding: 12px 20px;"><span class="tool-icon">📍</span>GPS</div>
+        <div class="tool-chip clay-card" style="padding: 12px 20px;"><span class="tool-icon">🎩</span>Sombrero</div>
+        <div class="tool-chip clay-card" style="padding: 12px 20px;"><span class="tool-icon">⛏️</span>Pala</div>
       </div>
 
       <div class="question-bubble">¿Qué harías si encuentras un fósil?</div>
@@ -396,6 +474,12 @@
 
   <!-- Botón flotante: volver al inicio del recorrido -->
   <button class="back-to-top" id="back-to-top" aria-label="Volver arriba">↑</button>
+
+  <!-- Mochila de gamificación -->
+  <div id="backpack" class="clay-card backpack-widget" style="position: fixed; bottom: 24px; left: 24px; z-index: 60; display: flex; align-items: center; gap: 10px; padding: 12px 20px; font-weight: 800; font-size: 1.2rem; cursor: pointer; transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);">
+    <span class="backpack-icon" style="font-size: 1.6rem;">🎒</span>
+    <span class="backpack-count" id="badge-count">0/4</span>
+  </div>
 
   <script src="js/script.js"></script>
 </body>

@@ -270,10 +270,287 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- Micro-Interacciones Sonoras ---
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  function playPop(type = 'click') {
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    const osc = audioCtx.createOscillator();
+    const gainNode = audioCtx.createGain();
+    
+    osc.type = 'sine';
+    if (type === 'correct') {
+      osc.frequency.setValueAtTime(400, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.15);
+    } else if (type === 'incorrect') {
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(300, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(150, audioCtx.currentTime + 0.2);
+    } else {
+      osc.frequency.setValueAtTime(500, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(700, audioCtx.currentTime + 0.1);
+    }
+    
+    gainNode.gain.setValueAtTime(0.15, audioCtx.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.15);
+    
+    osc.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.2);
+  }
+
+  // Bind clicks to generic buttons (excluding specific game buttons handled manually)
+  document.querySelectorAll('button:not(.quiz-btn):not(.fossil-btn)').forEach(btn => {
+    btn.addEventListener('click', () => playPop('click'));
+  });
+
+  // --- Sistema de Gamificación (Insignias y Quizzes) ---
+  const badgeCountEl = document.getElementById('badge-count');
+  const backpackEl = document.getElementById('backpack');
+  let badgesObtained = new Set();
+  const totalBadges = 4; // 3 quizzes + 1 minijuego
+
+  function checkBadge(badgeId) {
+    if (!badgesObtained.has(badgeId)) {
+      badgesObtained.add(badgeId);
+      badgeCountEl.textContent = `${badgesObtained.size}/${totalBadges}`;
+      
+      // Animar mochila
+      if (backpackEl) {
+        backpackEl.style.transform = 'scale(1.2) translateY(-10px)';
+        backpackEl.style.background = 'var(--verde-papalote)';
+        backpackEl.style.color = 'var(--blanco)';
+        setTimeout(() => {
+          backpackEl.style.transform = 'scale(1) translateY(0)';
+          backpackEl.style.background = 'var(--crema)';
+          backpackEl.style.color = 'var(--tinta)';
+        }, 600);
+      }
+      
+      if (badgesObtained.size === totalBadges) {
+        setTimeout(() => alert('¡Felicidades! Has completado todos los juegos interactivos de la Rampa.'), 1000);
+      }
+    }
+  }
+
+  document.querySelectorAll('.quiz-container').forEach(quiz => {
+    const btns = quiz.querySelectorAll('.quiz-btn');
+    btns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const isCorrect = this.dataset.correct === 'true';
+        const badgeId = this.dataset.badge;
+        
+        // Reset colors
+        btns.forEach(b => {
+          b.style.background = 'var(--gris-panel)';
+          b.style.color = 'var(--tinta)';
+        });
+
+        if (isCorrect) {
+          playPop('correct');
+          this.style.background = 'var(--verde-papalote)';
+          this.style.color = 'var(--blanco)';
+          checkBadge(badgeId);
+        } else {
+          playPop('incorrect');
+          this.style.background = 'var(--naranja-globo)';
+          this.style.color = 'var(--blanco)';
+          // Animación de error (vibración leve)
+          quiz.style.transition = 'transform 0.05s';
+          quiz.style.transform = 'translateX(6px)';
+          setTimeout(() => quiz.style.transform = 'translateX(-6px)', 50);
+          setTimeout(() => quiz.style.transform = 'translateX(6px)', 100);
+          setTimeout(() => quiz.style.transform = 'translateX(0)', 150);
+          setTimeout(() => quiz.style.transition = 'transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)', 200);
+        }
+      });
+    });
+  });
+
+  // --- Minijuego: Excava tu Fósil (Scratch Card) ---
+  const canvas = document.getElementById('scratchCanvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let isDrawing = false;
+    
+    // Rellenamos el canvas simulando "tierra"
+    ctx.fillStyle = '#C89B6A'; 
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Textura de tierra simulada
+    ctx.fillStyle = '#A3774C';
+    for(let i=0; i<150; i++){
+      ctx.beginPath();
+      ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 5, 0, Math.PI*2);
+      ctx.fill();
+    }
+
+    ctx.globalCompositeOperation = 'destination-out';
+    
+    function getPointerPos(e) {
+      const rect = canvas.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      return {
+        x: (clientX - rect.left) * scaleX,
+        y: (clientY - rect.top) * scaleY
+      };
+    }
+
+    function startScratch(e) {
+      isDrawing = true;
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      scratch(e);
+    }
+    
+    function stopScratch() {
+      isDrawing = false;
+      checkScratchCompletion();
+    }
+    
+    function scratch(e) {
+      if (!isDrawing) return;
+      if (e.cancelable) e.preventDefault(); // prevenir scroll en móvil
+      
+      const pos = getPointerPos(e);
+      ctx.beginPath();
+      ctx.arc(pos.x, pos.y, 25, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    
+    let isRevealed = false;
+    function checkScratchCompletion() {
+      if (isRevealed) return;
+      
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const pixels = imageData.data;
+      let clearPixels = 0;
+      
+      for (let i = 0; i < pixels.length; i += 4) {
+        if (pixels[i + 3] < 128) clearPixels++;
+      }
+      
+      const percent = clearPixels / (pixels.length / 4);
+      if (percent > 0.6) {
+        isRevealed = true;
+        canvas.style.transition = 'opacity 0.6s ease';
+        canvas.style.opacity = '0';
+        playPop('correct');
+        checkBadge('fossil-minigame');
+        setTimeout(() => canvas.style.display = 'none', 600);
+      }
+    }
+
+    canvas.addEventListener('mousedown', startScratch);
+    canvas.addEventListener('mousemove', scratch);
+    canvas.addEventListener('mouseup', stopScratch);
+    canvas.addEventListener('mouseleave', stopScratch);
+
+    canvas.addEventListener('touchstart', startScratch, {passive: false});
+    canvas.addEventListener('touchmove', scratch, {passive: false});
+    canvas.addEventListener('touchend', stopScratch);
+  }
+
+  // --- Parallax 3D FX (Papalote Premium Claymorphism) ---
+  const parallaxElements = document.querySelectorAll('[data-parallax]');
+  
+  // Para Desktop (Movimiento de ratón)
+  window.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth) - 0.5;
+    const y = (e.clientY / window.innerHeight) - 0.5;
+    
+    parallaxElements.forEach(el => {
+      const speed = parseFloat(el.getAttribute('data-parallax')) || 0.1;
+      const xOffset = x * speed * 250;
+      const yOffset = y * speed * 250;
+      el.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+    });
+  });
+
+  // Para Móviles (Giroscopio)
+  if (window.DeviceOrientationEvent) {
+    window.addEventListener("deviceorientation", (e) => {
+      const x = e.gamma ? (e.gamma / 45) : 0; 
+      const y = e.beta ? ((e.beta - 45) / 45) : 0;
+      
+      parallaxElements.forEach(el => {
+        const speed = parseFloat(el.getAttribute('data-parallax')) || 0.1;
+        const xOffset = x * speed * 150;
+        const yOffset = y * speed * 150;
+        el.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+      });
+    }, true);
+  }
+
+  // --- Carrusel(es) de imágenes: construido desde JSON, reutilizable ---
+  document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+    const track = carousel.querySelector('[data-carousel-track]');
+    const dotsBox = carousel.querySelector('[data-carousel-dots]');
+    const btnPrev = carousel.querySelector('[data-carousel-prev]');
+    const btnNext = carousel.querySelector('[data-carousel-next]');
+    const dataScript = carousel.querySelector('[data-carousel-data]');
+
+    let slides = [];
+    try {
+      slides = JSON.parse(dataScript.textContent);
+    } catch (e) {
+      console.error('No se pudieron leer los datos del carrusel:', e);
+      return;
+    }
+    if (slides.length === 0) return;
+
+    // Construimos cada slide (imagen + texto)
+    track.innerHTML = slides.map((s) => `
+      <div class="carousel-slide">
+        <img src="${s.src}" alt="${s.alt || ''}" loading="lazy">
+        <p class="carousel-caption">${s.caption || ''}</p>
+      </div>
+    `).join('');
+
+    // Construimos los puntos de navegación
+    dotsBox.innerHTML = slides.map((_, i) => `
+      <button class="carousel-dot${i === 0 ? ' is-active' : ''}" data-carousel-dot="${i}" aria-label="Ir a la imagen ${i + 1}"></button>
+    `).join('');
+
+    const dots = dotsBox.querySelectorAll('[data-carousel-dot]');
+    let indiceActual = 0;
+
+    function irA(indice) {
+      indiceActual = (indice + slides.length) % slides.length;
+      track.style.transform = `translateX(-${indiceActual * 100}%)`;
+      dots.forEach((dot, i) => dot.classList.toggle('is-active', i === indiceActual));
+    }
+
+    btnPrev.addEventListener('click', () => irA(indiceActual - 1));
+    btnNext.addEventListener('click', () => irA(indiceActual + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => irA(i)));
+
+    irA(0);
+  });
+
+  // --- Pantalla de entrada (intro): anima letras y bloquea el scroll hasta iniciar ---
+  const introOverlay = document.getElementById('intro-overlay');
+  const introBtn = document.getElementById('intro-start');
+
+  if (introOverlay) {
+    // Bloquea el scroll de la página mientras se muestra la intro
+    document.body.style.overflow = 'hidden';
+
+    // Cada letra del título aparece un poco después que la anterior
+    introOverlay.querySelectorAll('.intro-title span').forEach((letra, i) => {
+      letra.style.animationDelay = `${i * 0.05}s`;
+    });
+
+    if (introBtn) {
+      introBtn.addEventListener('click', () => {
+        introOverlay.classList.add('is-hidden');
+        document.body.style.overflow = '';
+      });
+    }
+  }
+
   // --- Espacio reservado para futuras funciones ---
-  // Ejemplos de lo que agregaremos estación por estación:
-  // - Quiz de opción múltiple al final de cada estación
-  // - Sistema de puntos/insignias guardado en localStorage
-  // - Barra de progreso según las estaciones visitadas
 
 });
