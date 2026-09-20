@@ -9,6 +9,29 @@ puede retomar exactamente donde se quedó el otro.
 
 ---
 
+## 2026-09-19 — Benjamín (con ayuda de Claude)
+
+**Se hizo:**
+- Se agregó la estación **ANCESTRO** con un **árbol de la vida interactivo**:
+  un centro "Ancestro común" rodeado de 5 ramas tocables (Plantas, Animales,
+  Hongos, Protozoos, Bacterias); al tocar una rama se muestra qué la hace
+  diferente de las demás.
+- Se agregó la estación **ADAPTACIÓN** con el texto real sobre el mar de
+  Vallecillo hace 93 Ma y los moluscos *Inoceramus*, más **tarjetas
+  expandibles** (acordeón) de las 4 especies nombradas en la rampa:
+  *Mauriciosaurus fernandezi*, *Vallecillichthys multivertebratum*,
+  *Vallecillosaurus donrobertoi* y *Gouimimichthys roberti*, cada una con
+  el significado real de su nombre científico.
+- Se agregaron "Ancestro" y "Adaptación" al menú de navegación.
+
+**Pendiente / siguiente sesión:**
+- Estaciones que faltan: Evidencia, Fósil Guía, Conocimiento, Recursos,
+  Conciencia.
+- (se mantiene lo demás: colaborador, confirmar texto de Paleontólogos,
+  hosting, reemplazar fotos de referencia por oficiales)
+
+---
+
 ## 2026-09-18 (4ta sesión del día) — Benjamín (con ayuda de Claude)
 
 **Se hizo:**

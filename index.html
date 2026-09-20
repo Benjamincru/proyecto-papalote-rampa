@@ -52,6 +52,8 @@
         <a href="#aramberri">Aramberri</a>
         <a href="#fosil">Fósil</a>
         <a href="#ecosistema">Ecosistema</a>
+        <a href="#ancestro">Ancestro</a>
+        <a href="#adaptacion">Adaptación</a>
         <a href="#paleontologos">Paleontólogos</a>
         <a href="#sostenible">Sostenible</a>
       </nav>
@@ -449,6 +451,132 @@
         Nota: el listado de herramientas se tomó de la vitrina
         real de la rampa; falta confirmar con el museo como quisieran que se agregue.
       </p>
+    </div>
+  </section>
+
+  <!-- ============ ESTACIÓN: ANCESTRO (árbol de la vida interactivo) ============ -->
+  <section class="station station--light reveal" id="ancestro">
+    <div class="station-inner">
+      <span class="station-kicker">Estación</span>
+      <h2 class="station-title">ANCESTRO</h2>
+      <p class="station-text">
+        Las especies que han vivido en el pasado y las que podemos ver hoy
+        están relacionadas y comparten ancestros en común. El registro
+        fósil permite reconocer que, a través de miles o millones de años,
+        las especies cambian en un proceso natural conocido como
+        <strong>evolución</strong>, en el cual se pueden extinguir unas u
+        originar otras. Todos los seres vivos tenemos una historia
+        compartida.
+      </p>
+
+      <div class="question-bubble">
+        ¿Cómo te imaginas que era el ancestro común de todos los seres vivos?
+      </div>
+
+      <!-- ---- Árbol de la vida: toca cada rama ---- -->
+      <div class="tree-hub clay-card" data-tree>
+        <div class="tree-center">Ancestro<br>común</div>
+
+        <button class="tree-branch" style="--pos: 0" data-tree-branch data-tree-index="0">
+          <span class="tree-emoji">🌱</span><span>Plantas</span>
+        </button>
+        <button class="tree-branch" style="--pos: 1" data-tree-branch data-tree-index="1">
+          <span class="tree-emoji">🐾</span><span>Animales</span>
+        </button>
+        <button class="tree-branch" style="--pos: 2" data-tree-branch data-tree-index="2">
+          <span class="tree-emoji">🍄</span><span>Hongos</span>
+        </button>
+        <button class="tree-branch" style="--pos: 3" data-tree-branch data-tree-index="3">
+          <span class="tree-emoji">🦠</span><span>Protozoos</span>
+        </button>
+        <button class="tree-branch" style="--pos: 4" data-tree-branch data-tree-index="4">
+          <span class="tree-emoji">🧫</span><span>Bacterias</span>
+        </button>
+
+        <p class="tree-detail" data-tree-detail>
+          Toca una rama para descubrir qué la hace diferente.
+        </p>
+
+        <script type="application/json" data-tree-data>
+        [
+          "Las plantas producen su propio alimento a partir de la luz del sol.",
+          "Los animales, como nosotros, obtienen energía alimentándose de otros seres vivos.",
+          "Los hongos descomponen materia orgánica y reciclan nutrientes en el ecosistema.",
+          "Los protozoos son organismos de una sola célula, pero con un núcleo bien definido.",
+          "Las bacterias son de los seres vivos más simples y antiguos que existen, sin núcleo definido."
+        ]
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ESTACIÓN: ADAPTACIÓN (especies de Vallecillo) ============ -->
+  <section class="station station--panel reveal" id="adaptacion">
+    <div class="station-inner">
+      <span class="station-kicker">Estación</span>
+      <h2 class="station-title">ADAPTACIÓN</h2>
+      <p class="station-text">
+        La adaptación biológica es un proceso natural clave para la
+        extinción de algunas especies o el origen de otras. Hace 93
+        millones de años, la superficie cálida y con oxígeno de los mares
+        de Vallecillo albergaba una gran diversidad de seres vivos —
+        incluyendo especies que solo se han descubierto en este sitio.
+      </p>
+      <p class="station-text">
+        En el fondo marino, las bajas concentraciones de oxígeno solo
+        permitían vivir a los organismos que toleraban esas condiciones
+        extremas, como los moluscos <em>Inoceramus</em>, cuya relación de
+        mutuo beneficio con bacterias les permitió adaptarse, sobrevivir,
+        y llegar a ser abundantes y de gran tamaño.
+      </p>
+
+      <div class="question-bubble">
+        ¿Si vivieras en el mar de Vallecillo, qué características te ayudarían a sobrevivir?
+      </div>
+
+      <!-- ---- Tarjetas de especies (toca para expandir) ---- -->
+      <div class="species-grid" data-accordion>
+        <button class="species-card clay-card" data-accordion-item>
+          <span class="species-name">Mauriciosaurus fernandezi</span>
+          <span class="species-toggle">+</span>
+          <p class="species-detail" data-accordion-panel>
+            Descrito en 2017. Su nombre honra al ingeniero Mauricio
+            Fernández Garza, quien facilitó el acceso a la cantera de
+            Vallecillo para su estudio científico.
+          </p>
+        </button>
+
+        <button class="species-card clay-card" data-accordion-item>
+          <span class="species-name">Vallecillichthys multivertebratum</span>
+          <span class="species-toggle">+</span>
+          <p class="species-detail" data-accordion-panel>
+            Descrito en 2003. "Vallecilli-" honra la localidad donde se
+            encontró; "-ichthys" significa pez; "multivertebratum" se
+            refiere a sus numerosas vértebras.
+          </p>
+        </button>
+
+        <button class="species-card clay-card" data-accordion-item>
+          <span class="species-name">Vallecillosaurus donrobertoi</span>
+          <span class="species-toggle">+</span>
+          <p class="species-detail" data-accordion-panel>
+            Descrito en 2008. "Vallecillo-" por el sitio del hallazgo,
+            "-saurus" significa lagartija; "donrobertoi" honra a don
+            Roberto González Vázquez, dueño de la cantera, quien donó el
+            ejemplar a la Facultad de Ciencias de la Tierra de la UANL.
+          </p>
+        </button>
+
+        <button class="species-card clay-card" data-accordion-item>
+          <span class="species-name">Gouimimichthys roberti</span>
+          <span class="species-toggle">+</span>
+          <p class="species-detail" data-accordion-panel>
+            Descrito en 2005. "Roberti" honra nuevamente a don Roberto
+            González Vázquez, por su contribución al rescate de los
+            fósiles de Vallecillo.
+          </p>
+        </button>
+      </div>
     </div>
   </section>
 

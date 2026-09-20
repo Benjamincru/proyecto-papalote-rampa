@@ -551,6 +551,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // --- Estación ANCESTRO: árbol de la vida (toca una rama para ver info) ---
+  document.querySelectorAll('[data-tree]').forEach((tree) => {
+    const ramas = tree.querySelectorAll('[data-tree-branch]');
+    const detalle = tree.querySelector('[data-tree-detail]');
+    const dataScript = tree.querySelector('[data-tree-data]');
+
+    let textos = [];
+    try {
+      textos = JSON.parse(dataScript.textContent);
+    } catch (e) {
+      console.error('No se pudieron leer los datos del árbol:', e);
+      return;
+    }
+
+    ramas.forEach((rama) => {
+      rama.addEventListener('click', () => {
+        ramas.forEach((r) => r.classList.remove('is-active'));
+        rama.classList.add('is-active');
+        const i = Number(rama.dataset.treeIndex);
+        detalle.textContent = textos[i] || '';
+      });
+    });
+  });
+
+  // --- Estación ADAPTACIÓN: tarjetas de especies expandibles (acordeón) ---
+  document.querySelectorAll('[data-accordion]').forEach((grupo) => {
+    grupo.querySelectorAll('[data-accordion-item]').forEach((item) => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('is-open');
+        const abierto = item.classList.contains('is-open');
+        item.querySelector('.species-toggle').textContent = abierto ? '×' : '+';
+      });
+    });
+  });
+
   // --- Espacio reservado para futuras funciones ---
 
 });
