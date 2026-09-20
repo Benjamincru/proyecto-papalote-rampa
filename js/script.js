@@ -16,16 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Estación FÓSIL: paso a paso interactivo (amonite / pez) ---
-  const stepper = document.querySelector('[data-stepper]');
-
-  if (stepper) {
+  // --- Paso a paso interactivo (reutilizable: Fósil, Recursos, y los que sigan) ---
+  document.querySelectorAll('[data-stepper]').forEach((stepper) => {
     const tabs = stepper.querySelectorAll('[data-fossil-track]');
     const prevBtn = stepper.querySelector('[data-fossil-prev]');
     const nextBtn = stepper.querySelector('[data-fossil-next]');
     const countLabel = stepper.querySelector('[data-fossil-count]');
+    const listasDeSteps = stepper.querySelectorAll('[data-fossil-steps]');
 
-    let currentTrack = 'amonite';
+    if (listasDeSteps.length === 0) return;
+
+    // La secuencia inicial es la primera que aparezca en el HTML
+    // (si hay pestañas, el usuario puede cambiarla después)
+    let currentTrack = listasDeSteps[0].dataset.fossilSteps;
     let currentIndex = 0;
 
     // Devuelve la lista de <li> (pasos) de la secuencia activa
@@ -47,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nextBtn.disabled = currentIndex === steps.length - 1;
     }
 
-    // Cambiar entre la secuencia de "amonite" y la de "pez"
+    // Cambiar de secuencia con las pestañas (si las hay)
     tabs.forEach((tab) => {
       tab.addEventListener('click', () => {
         currentTrack = tab.dataset.fossilTrack;
@@ -55,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         tabs.forEach((t) => t.classList.toggle('is-active', t === tab));
 
-        stepper.querySelectorAll('[data-fossil-steps]').forEach((list) => {
+        listasDeSteps.forEach((list) => {
           list.hidden = list.dataset.fossilSteps !== currentTrack;
         });
 
@@ -75,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     render();
-  }
+  });
 
   // --- Línea(s) de tiempo interactivas (Tierra, Cambio, y las que sigan) ---
   // Se busca CADA elemento con [data-timeline] en la página y se le da

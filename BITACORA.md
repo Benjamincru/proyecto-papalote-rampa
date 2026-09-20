@@ -9,6 +9,46 @@ puede retomar exactamente donde se quedó el otro.
 
 ---
 
+## 2026-09-20 — Benjamín (con ayuda de Claude)
+
+**Se hizo:**
+- Se agregó la estación **RECURSOS** con el paso a paso real de cómo se
+  forman los combustibles fósiles (organismos enterrados → hidrocarburos
+  → petróleo y gas por presión/temperatura), reutilizando el mismo
+  componente de paso a paso de la estación Fósil, y una galería de íconos
+  de usos cotidianos (edificios, barcos, aviones, plásticos, medicinas).
+- Se agregó la estación **CONCIENCIA** con el texto real sobre el impacto
+  humano acelerado de los últimos 200 años, y una leyenda de las 4
+  categorías de riesgo (en peligro de extinción, amenazadas, sujetas a
+  protección especial, probablemente extintas en el medio silvestre).
+- **Aviso de datos:** el panel original de Conciencia muestra gráficas
+  con el % exacto de especies de cada grupo (hongos, plantas, peces, etc.)
+  en cada categoría de riesgo, pero esos números no se alcanzan a leer
+  bien en las fotos. Se dejó como nota visible en el sitio — no se
+  inventaron porcentajes.
+- **Se refactorizó el componente de paso a paso** (`data-stepper`) para
+  que funcione con varias instancias en la página (antes solo detectaba
+  la primera, como con la línea de tiempo). Ya no depende de que la
+  primera secuencia se llame "amonite": ahora toma automáticamente la
+  primera secuencia que encuentre en cada estación.
+- Se agregaron "Recursos" y "Conciencia" al menú de navegación.
+
+**Estaciones que ya tienen contenido real (9 de 9 estaciones principales):**
+Tierra, Cambio, Aramberri, Fósil, Ecosistema, Paleontólogos, Ancestro,
+Adaptación, Recursos, Conciencia, Sostenible.
+
+**Pendiente / siguiente sesión:**
+- Estaciones que faltan por transcribir del recorrido físico: Evidencia,
+  Fósil Guía, Conocimiento (paneles con vitrinas de fósiles adicionales,
+  contenido parecido a Fósil/Ecosistema — decidir si se fusionan con
+  esas o se hacen aparte).
+- Confirmar con el museo los % exactos de la estación Conciencia y el
+  texto de los 9 pasos de Paleontólogos.
+- (se mantiene lo demás: colaborador, hosting, reemplazar fotos de
+  referencia por oficiales)
+
+---
+
 ## 2026-09-19 — Benjamín (con ayuda de Claude)
 
 **Se hizo:**
