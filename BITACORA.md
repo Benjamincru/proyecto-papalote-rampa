@@ -24,11 +24,6 @@ puede retomar exactamente donde se quedó el otro.
   mientras se consiguen fotos propias de esa vitrina.
 - Se agregaron "Evidencia" y "Fósil Guía" al menú de navegación.
 
-**Con esto quedan las 17 estaciones identificadas con contenido real:**
-Tierra, Cambio, Fósil, Evidencia, Fósil Guía, Conocimiento, Ecosistema,
-Paleontólogos, Aramberri, Ancestro, Adaptación, Recursos, Conciencia,
-Sostenible (y las secciones de intro/héroe).
-
 **Pendiente:**
 - Fotos propias de la vitrina de Conocimiento.
 - Confirmar con el museo: % exactos de Conciencia, texto completo de los
@@ -53,9 +48,8 @@ Sostenible (y las secciones de intro/héroe).
   protección especial, probablemente extintas en el medio silvestre).
 - **Aviso de datos:** el panel original de Conciencia muestra gráficas
   con el % exacto de especies de cada grupo (hongos, plantas, peces, etc.)
-  en cada categoría de riesgo, pero esos números no se alcanzan a leer
-  bien en las fotos. Se dejó como nota visible en el sitio — no se
-  inventaron porcentajes.
+  en cada categoría de riesgo, pero esos números no lo alcance a leer
+  bien en las fotos. Se dejó como nota visible en el sitio.
 - **Se refactorizó el componente de paso a paso** (`data-stepper`) para
   que funcione con varias instancias en la página (antes solo detectaba
   la primera, como con la línea de tiempo). Ya no depende de que la
@@ -63,9 +57,6 @@ Sostenible (y las secciones de intro/héroe).
   primera secuencia que encuentre en cada estación.
 - Se agregaron "Recursos" y "Conciencia" al menú de navegación.
 
-**Estaciones que ya tienen contenido real (9 de 9 estaciones principales):**
-Tierra, Cambio, Aramberri, Fósil, Ecosistema, Paleontólogos, Ancestro,
-Adaptación, Recursos, Conciencia, Sostenible.
 
 **Pendiente / siguiente sesión:**
 - Estaciones que faltan por transcribir del recorrido físico: Evidencia,
@@ -139,8 +130,7 @@ Adaptación, Recursos, Conciencia, Sostenible.
 
 **Se hizo:**
 - Se agregaron 3 fotos de fósiles de referencia a `/img`: `amonite-especimen.jpg`,
-  `pez-fosil-raya.jpg`, `pez-fosil-pequeno.jpg` (comprimidas de varios MB a
-  ~170-200 KB cada una para que carguen rápido).
+  `pez-fosil-raya.jpg`, `pez-fosil-pequeno.jpg`.
 - Se construyó un **componente de carrusel reutilizable** (mismo patrón que
   la línea de tiempo y la gráfica de dona: JSON + JavaScript genérico) y se
   integró en la estación **FÓSIL**, mostrando esas 3 fotos con flechas y
@@ -156,26 +146,15 @@ Adaptación, Recursos, Conciencia, Sostenible.
   entrega Sketchfab (copiado directamente desde su botón "Embed viewer"),
   para no dejar ninguna duda sobre la atribución correcta.
 
-**Aviso de derechos de autor:** se recibió una 4ta imagen (`fosil.jpg`,
-una lámina en blanco y negro de una publicación científica en francés)
-que **NO se integró al sitio** porque parece escaneada de un artículo/libro
-impreso, con posibles derechos de autor del editor. Se guardó en `/img`
-como `NOUSAR-placa-cientifica-verificar-licencia.jpg` (el nombre lo dice:
-no usar hasta confirmar la licencia). Si se puede confirmar que es de
-dominio público o de una fuente con licencia libre, se puede integrar
-después.
-
 **Pendiente / siguiente sesión:**
 - Reemplazar las 3 fotos de fósiles de referencia por fotos oficiales de
   la rampa cuando estén disponibles.
-- Decidir qué hacer con la 4ta imagen (buscar la fuente original o
-  descartarla definitivamente).
 - (se mantiene lo demás: colaborador, confirmar texto de Paleontólogos,
   estaciones restantes, hosting)
 
 ---
 
-## 2026-09-18 — Sesión con Antigravity (trabajo paralelo, fusionado aquí)
+## 2026-09-18 — Mejora con Antigravity (trabajo paralelo, fusionado aquí)
 
 **Se hizo (en otra herramienta, ahora integrado como base de trabajo):**
 - Se resolvió el pendiente de la **paleta de color**: se ajustó a los
@@ -195,9 +174,9 @@ después.
 - Se agregaron fondos decorativos con parallax sutil (formas geométricas).
 
 **Nota del equipo:** este trabajo se hizo con otra herramienta (Antigravity)
-en paralelo; se revisó y se adoptó como base de trabajo actual porque es
-compatible y superior a la versión anterior. A partir de aquí seguimos
-trabajando sobre esta versión.
+en paralelo para la ayuda de los efectos; se revisó y se adoptó como base de 
+trabajo actual porque es compatible y superior a la versión anterior. 
+A partir de aquí seguimos trabajando sobre esta versión.
 
 **Pendiente / siguiente sesión:**
 - Conseguir/colocar el video del pliosaurio (render de Sketchfab) en el
@@ -227,7 +206,7 @@ trabajando sobre esta versión.
   brújula, GPS, sombrero, pala).
 - **Aviso importante:** en el panel de Paleontólogos había 9 pasos
   numerados en las fotos, pero el texto se ve demasiado pequeño/borroso
-  para transcribirlo con certeza. Se dejó una nota visible en el sitio
+  para escribirlo con certeza. Deje una nota visible en el sitio
   y aquí en la bitácora para que se confirme con el museo o con fotos
   de mejor resolución antes de la entrega final.
 - Se agregaron "Ecosistema" y "Paleontólogos" al menú de navegación.
@@ -244,7 +223,7 @@ trabajando sobre esta versión.
 ## 2026-09-08 (5ta sesión) — Benjamín
 
 **Se hizo — mejoras de experiencia de usuario (aplican a todo el sitio):**
-- **Barra de progreso** arriba de la pantalla: muestra cuánto llevas
+- **Barra de progreso** arriba de la pantalla: muestra cuánto se lleva
   recorrido de la rampa completa, no solo de una estación.
 - **Menú activo (scrollspy):** el enlace de la estación que estás viendo
   se resalta automáticamente en el menú, así el visitante siempre sabe
@@ -280,7 +259,7 @@ trabajando sobre esta versión.
   presente, mostrando cómo se retiró el mar de Nuevo León.
 - Se **refactorizó `script.js`** para que la línea de tiempo funcione con
   varias instancias en la misma página (antes solo soportaba una). Esto
-  es importante: si en otra estación quieren otra línea de tiempo, ya
+  es importante: si en otra estación agregamos otra línea de tiempo, ya
   funciona automáticamente sin tocar el JavaScript, solo agregando el
   bloque HTML con su propio JSON de datos.
 - Se agregó "Cambio" al menú de navegación.
@@ -289,14 +268,7 @@ trabajando sobre esta versión.
 - (se mantiene lo pendiente: colaborador, fotos/imágenes reales,
   estaciones restantes — Ecosistema, Evidencia, Paleontólogos, Fósil
   Guía, Conocimiento, Ancestro, Adaptación, Recursos, Conciencia —,
-  hosting en Netlify/Vercel, sistema de puntos/quiz)
-- Nota: en otra sesión se habló de hacer un documento de diseño aparte
-  para el asesor, con una paleta ligeramente distinta a la que ya está
-  en el CSS (extraída directo del home de papalotemty.org.mx: azul
-  primario, naranja/rojo de acento, verde lima y morado secundarios,
-  personajes geométricos con cara, trazos punteados a mano). Falta
-  decidir si se ajusta la paleta del sitio a esa referencia o se deja
-  la actual (verde/naranja/madera).
+  hosting en Netlify/Vercel, sistema de puntos/quiz).
 
 ---
 
