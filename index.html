@@ -51,6 +51,8 @@
         <a href="#cambio">Cambio</a>
         <a href="#aramberri">Aramberri</a>
         <a href="#fosil">Fósil</a>
+        <a href="#evidencia">Evidencia</a>
+        <a href="#fosil-guia">Fósil Guía</a>
         <a href="#ecosistema">Ecosistema</a>
         <a href="#ancestro">Ancestro</a>
         <a href="#adaptacion">Adaptación</a>
@@ -385,6 +387,80 @@
     </div>
   </section>
 
+  <!-- ============ ESTACIÓN: EVIDENCIA ============ -->
+  <section class="station station--dark reveal" id="evidencia">
+    <div class="station-inner">
+      <span class="station-kicker">Estación</span>
+      <h2 class="station-title">EVIDENCIA</h2>
+      <p class="station-text">
+        El estudio de los fósiles y las rocas permite comprender la
+        historia de la Tierra y los procesos que han llevado a formar los
+        ecosistemas actuales.
+      </p>
+      <div class="question-bubble question-bubble--light">¿Por qué crees que los fósiles son importantes?</div>
+      <div class="question-bubble question-bubble--light" style="margin-top: 10px;">¿Cómo puedes reconocer un fósil?</div>
+    </div>
+  </section>
+
+  <!-- ============ ESTACIÓN: FÓSIL GUÍA (columna geológica interactiva) ============ -->
+  <section class="station station--panel reveal" id="fosil-guia">
+    <div class="station-inner">
+      <span class="station-kicker">Estación</span>
+      <h2 class="station-title">FÓSIL GUÍA</h2>
+      <p class="station-text">
+        Hay seres vivos que existieron en determinados periodos geológicos,
+        y sus fósiles nos guían para conocer la edad de las rocas. Los
+        fósiles guía son evidencia de organismos que vivieron durante un
+        intervalo de tiempo corto; al ser muy abundantes y tener una
+        amplia distribución por el mundo, son fáciles de identificar en
+        los estratos y nos ayudan a fechar las capas de la Tierra.
+      </p>
+
+      <div class="question-bubble">¿Qué te imaginas que sea un fósil guía?</div>
+
+      <!-- ---- Columna geológica: toca cada capa ---- -->
+      <div class="strata-column clay-card" data-tree>
+        <p class="strata-label">Cenomaniano — Turoniano</p>
+
+        <button class="tree-branch strata-layer" data-tree-branch data-tree-index="0">5 · Mammites nodosoides</button>
+        <button class="tree-branch strata-layer" data-tree-branch data-tree-index="1">4 · Pseudaspidoceras flexuosum</button>
+        <button class="tree-branch strata-layer" data-tree-branch data-tree-index="2">3 · Helvetoglobotruncana helvetica</button>
+        <button class="tree-branch strata-layer" data-tree-branch data-tree-index="3">2 · Mytiloides sp.</button>
+        <button class="tree-branch strata-layer" data-tree-branch data-tree-index="4">1 · Inoceramus pictus</button>
+
+        <p class="tree-detail" data-tree-detail>
+          Toca una capa para ver qué fósil guía se encontró ahí.
+        </p>
+
+        <script type="application/json" data-tree-data>
+        [
+          "Mammites nodosoides: uno de los fósiles guía más recientes de esta columna, marca la parte alta de la secuencia.",
+          "Pseudaspidoceras flexuosum: un amonite característico de esta capa intermedia.",
+          "Helvetoglobotruncana helvetica: un microorganismo marino usado para fechar rocas con mucha precisión.",
+          "Mytiloides sp.: un molusco bivalvo abundante en los mares cretácicos de la región.",
+          "Inoceramus pictus: el fósil guía más antiguo de esta columna, marca la base de la secuencia."
+        ]
+        </script>
+      </div>
+
+      <!-- ---- Mini estación: CONOCIMIENTO ---- -->
+      <div id="conocimiento" style="margin-top: 40px;">
+        <h3 style="font-size: 1.2rem;">CONOCIMIENTO</h3>
+        <p class="station-text">
+          Junto a la columna geológica, la rampa exhibe una vitrina con
+          varios fósiles reales de Vallecillo como evidencia física de
+          todo lo anterior.
+        </p>
+        <p class="station-note">
+          Nota del equipo: esta vitrina tiene sus propias fotos en el
+          panel físico; por ahora usamos como referencia las mismas fotos
+          de la estación Fósil (<a href="#fosil" style="color: var(--azul-fosil); font-weight: 700;">ver galería</a>)
+          mientras conseguimos fotos únicas de esta vitrina en particular.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ ESTACIÓN: ECOSISTEMA (gráfica interactiva) ============ -->
   <section class="station station--light reveal" id="ecosistema">
     <div class="station-inner">
@@ -662,7 +738,10 @@
         <li><span class="risk-swatch" style="background:#8A6BB1"></span> Probablemente extintas en el medio silvestre</li>
       </ul>
       <p class="station-note">
-        Nota: Son datos de prueba tomados de la rampa; falta confirmar con el museo si quieren que se agregue.
+        Nota del equipo: el panel original muestra una gráfica con el % de
+        especies de cada grupo en cada categoría, pero el número exacto no
+        se distingue bien en las fotos. Falta confirmar esos porcentajes
+        con el museo antes de mostrarlos como dato preciso.
       </p>
     </div>
   </section>

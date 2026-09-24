@@ -9,7 +9,37 @@ puede retomar exactamente donde se quedó el otro.
 
 ---
 
-## 2026-09-20 — Benjamín (con ayuda de Claude)
+## 2026-09-24 — Benjamín
+
+**Se hizo:**
+- Se agregó la estación **EVIDENCIA** con el texto real sobre por qué el
+  estudio de fósiles y rocas ayuda a entender la historia de la Tierra.
+- Se agregó la estación **FÓSIL GUÍA** con una **columna geológica
+  interactiva**: 5 capas tocables (Inoceramus pictus, Mytiloides sp.,
+  Helvetoglobotruncana helvetica, Pseudaspidoceras flexuosum, Mammites
+  nodosoides), reutilizando el mismo componente interactivo del árbol de
+  la vida de Ancestro (ya generalizado para cualquier estación).
+- Se agregó una **mini estación CONOCIMIENTO** dentro de Fósil Guía, con
+  nota honesta de que por ahora enlaza a la galería de fotos de Fósil
+  mientras se consiguen fotos propias de esa vitrina.
+- Se agregaron "Evidencia" y "Fósil Guía" al menú de navegación.
+
+**Con esto quedan las 17 estaciones identificadas con contenido real:**
+Tierra, Cambio, Fósil, Evidencia, Fósil Guía, Conocimiento, Ecosistema,
+Paleontólogos, Aramberri, Ancestro, Adaptación, Recursos, Conciencia,
+Sostenible (y las secciones de intro/héroe).
+
+**Pendiente:**
+- Fotos propias de la vitrina de Conocimiento.
+- Confirmar con el museo: % exactos de Conciencia, texto completo de los
+  9 pasos de Paleontólogos.
+- Colaborador en GitHub, hosting (Netlify/Vercel), reemplazar fotos de
+  referencia por oficiales en todas las estaciones.
+- Revisar todo el recorrido completo de principio a fin con el equipo.
+
+---
+
+## 2026-09-20 — Benjamín
 
 **Se hizo:**
 - Se agregó la estación **RECURSOS** con el paso a paso real de cómo se
@@ -49,7 +79,7 @@ Adaptación, Recursos, Conciencia, Sostenible.
 
 ---
 
-## 2026-09-19 — Benjamín (con ayuda de Claude)
+## 2026-09-19 — Benjamín
 
 **Se hizo:**
 - Se agregó la estación **ANCESTRO** con un **árbol de la vida interactivo**:
@@ -72,7 +102,7 @@ Adaptación, Recursos, Conciencia, Sostenible.
 
 ---
 
-## 2026-09-18 (4ta sesión del día) — Benjamín (con ayuda de Claude)
+## 2026-09-18 (4ta sesión del día) — Benjamín
 
 **Se hizo:**
 - Se integró el **logo oficial de Papalote Museo del Niño Monterrey**
@@ -87,7 +117,7 @@ Adaptación, Recursos, Conciencia, Sostenible.
 
 ---
 
-## 2026-09-18 (3ra sesión del día) — Benjamín (con ayuda de Claude)
+## 2026-09-18 (3ra sesión del día) — Benjamín
 
 **Se hizo:**
 - Se agregó una **pantalla de entrada (intro)** a pantalla completa,
@@ -105,7 +135,7 @@ Adaptación, Recursos, Conciencia, Sostenible.
 
 ---
 
-## 2026-09-18 (2da sesión del día) — Benjamín (con ayuda de Claude)
+## 2026-09-18 (2da sesión del día) — Benjamín
 
 **Se hizo:**
 - Se agregaron 3 fotos de fósiles de referencia a `/img`: `amonite-especimen.jpg`,
@@ -181,7 +211,7 @@ trabajando sobre esta versión.
 
 ---
 
-## 2026-09-08 (6ta sesión) — Benjamín 6
+## 2026-09-08 (6ta sesión) — Benjamín
 
 **Se hizo:**
 - Se agregó la estación **ECOSISTEMA** con una **gráfica de dona interactiva**
@@ -211,7 +241,7 @@ trabajando sobre esta versión.
 
 ---
 
-## 2026-09-08 (5ta sesión) — Benjamín 5
+## 2026-09-08 (5ta sesión) — Benjamín
 
 **Se hizo — mejoras de experiencia de usuario (aplican a todo el sitio):**
 - **Barra de progreso** arriba de la pantalla: muestra cuánto llevas
@@ -239,7 +269,7 @@ trabajando sobre esta versión.
 
 ---
 
-## 2026-09-08 (4ta sesión) — Benjamín 4
+## 2026-09-08 (4ta sesión) — Benjamín
 
 **Se hizo:**
 - Se completó la estación **CAMBIO** con el texto real: mares cretácicos
@@ -270,7 +300,7 @@ trabajando sobre esta versión.
 
 ---
 
-## 2026-09-08 (3ra sesión) — Benjamín 3
+## 2026-09-08 (3ra sesión) — Benjamín
 
 **Se hizo:**
 - Se completó la estación **TIERRA** con el texto real de las fotos.
@@ -293,7 +323,7 @@ trabajando sobre esta versión.
 
 ---
 
-## 2026-09-08 (2da sesión) — Benjamín 2
+## 2026-09-08 (2da sesión) — Benjamín
 
 **Se hizo:**
 - Se completó la estación **FÓSIL** con el texto real de las fotos
@@ -312,7 +342,7 @@ trabajando sobre esta versión.
 
 ---
 
-## 2026-09-08 — Benjamín 1
+## 2026-09-08 — Benjamín
 
 **Se hizo:**
 - Se creó el repositorio `rampa-papalote-uanl` en GitHub.
